@@ -138,7 +138,66 @@ section {
     background: var(--accent);
 }
 
-/* Mobile menu button */
+/* =========================
+   PORTFOLIO DROPDOWN
+========================= */
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-toggle {
+    background: none;
+    border: none;
+    color: var(--text);
+    cursor: pointer;
+    font-size: 14px;
+    padding: 0;
+    transition: .3s ease;
+}
+
+.dropdown-toggle:hover {
+    color: var(--accent);
+}
+
+.dropdown-menu {
+    position: absolute;
+    top: calc(100% + 14px);
+    left: 50%;
+    transform: translateX(-50%);
+    min-width: 190px;
+    background: var(--white);
+    border: 1px solid var(--border);
+    border-radius: 15px;
+    box-shadow: var(--shadow);
+    padding: 8px;
+    display: none;
+    z-index: 1001;
+}
+
+.dropdown-menu a {
+    display: block;
+    width: 100%;
+    padding: 10px 13px;
+    border-radius: 9px;
+    font-size: 14px;
+    color: var(--text);
+}
+
+.dropdown-menu a:hover {
+    background: var(--soft);
+    color: var(--accent);
+}
+
+/* Show dropdown on desktop */
+
+.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+/* =========================
+   MOBILE MENU BUTTON
+========================= */
 
 .menu-toggle {
     display: none;
@@ -854,7 +913,7 @@ footer p {
     }
 
     /*
-    THIS IS THE IMPORTANT FIX.
+    IMPORTANT FIX:
     When JavaScript adds "open",
     the menu becomes visible.
     */
@@ -877,6 +936,48 @@ footer p {
     .nav-links .nav-btn {
         text-align: center;
         margin-top: 5px;
+    }
+
+    /* Mobile dropdown */
+
+    .dropdown {
+        width: 100%;
+    }
+
+    .dropdown-toggle {
+        width: 100%;
+        text-align: left;
+        padding: 13px 16px;
+        border-radius: 12px;
+        font-size: 15px;
+    }
+
+    .dropdown-toggle:hover {
+        background: var(--soft);
+    }
+
+    .dropdown-menu {
+        position: static;
+        transform: none;
+        width: 100%;
+        min-width: 0;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        padding: 0 0 0 15px;
+        background: transparent;
+    }
+
+    .dropdown:hover .dropdown-menu {
+        display: none;
+    }
+
+    .dropdown.open .dropdown-menu {
+        display: block;
+    }
+
+    .dropdown-menu a {
+        padding: 10px 16px;
     }
 
     .hero {
@@ -1053,6 +1154,7 @@ footer p {
 ===================================================== */
 
 .nav-links a:focus-visible,
+.dropdown-toggle:focus-visible,
 .btn:focus-visible,
 .menu-toggle:focus-visible {
     outline: 3px solid rgba(217,95,158,.35);
@@ -1097,9 +1199,45 @@ Snooky<span>.</span>
 Services
 </a>
 
+<!-- PORTFOLIO DROPDOWN -->
+
+<div class="dropdown">
+
+<button
+    class="dropdown-toggle"
+    type="button"
+    aria-expanded="false"
+    aria-haspopup="true">
+
+    Portfolio ▾
+
+</button>
+
+<div class="dropdown-menu">
+
 <a href="#portfolio">
-Portfolio
+All Projects
 </a>
+
+<a href="#skincare">
+Skincare
+</a>
+
+<a href="#fashion">
+Fashion
+</a>
+
+<a href="#food">
+Food
+</a>
+
+<a href="#jewelry">
+Jewelry
+</a>
+
+</div>
+
+</div>
 
 <a href="#process">
 Process
@@ -1333,7 +1471,7 @@ product presentation and promotional design.
 <div class="portfolio-grid">
 
 
-<div class="project">
+<div class="project" id="skincare">
 
 <div class="project-image">
 
@@ -1361,7 +1499,7 @@ and sale campaign.
 </div>
 
 
-<div class="project">
+<div class="project" id="fashion">
 
 <div class="project-image">
 
@@ -1389,7 +1527,7 @@ and social media posts.
 </div>
 
 
-<div class="project">
+<div class="project" id="food">
 
 <div class="project-image">
 
@@ -1417,7 +1555,7 @@ and social media content.
 </div>
 
 
-<div class="project">
+<div class="project" id="jewelry">
 
 <div class="project-image">
 
@@ -1851,7 +1989,7 @@ Product Marketing • Graphic Design • E-commerce
 
 
 <!-- =========================
-     MOBILE MENU SCRIPT
+     MENU + DROPDOWN SCRIPT
 ========================= -->
 
 <script>
@@ -1860,12 +1998,17 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const menuToggle = document.querySelector(".menu-toggle");
     const navLinks = document.querySelector(".nav-links");
+    const dropdown = document.querySelector(".dropdown");
+    const dropdownToggle = document.querySelector(".dropdown-toggle");
 
     if (!menuToggle || !navLinks) {
         return;
     }
 
-    /* Open / close menu */
+
+    /* =========================
+       OPEN / CLOSE MAIN MENU
+    ========================= */
 
     menuToggle.addEventListener("click", function () {
 
@@ -1886,7 +2029,31 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
 
-    /* Close menu after clicking a link */
+    /* =========================
+       PORTFOLIO DROPDOWN
+    ========================= */
+
+    if (dropdown && dropdownToggle) {
+
+        dropdownToggle.addEventListener("click", function (event) {
+
+            event.stopPropagation();
+
+            const isOpen = dropdown.classList.toggle("open");
+
+            dropdownToggle.setAttribute(
+                "aria-expanded",
+                isOpen ? "true" : "false"
+            );
+
+        });
+
+    }
+
+
+    /* =========================
+       CLOSE AFTER CLICKING LINK
+    ========================= */
 
     navLinks.querySelectorAll("a").forEach(function (link) {
 
@@ -1906,12 +2073,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Open navigation"
             );
 
+
+            if (dropdown) {
+
+                dropdown.classList.remove("open");
+
+            }
+
+
+            if (dropdownToggle) {
+
+                dropdownToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
         });
 
     });
 
 
-    /* Close menu when clicking outside */
+    /* =========================
+       CLOSE WHEN CLICKING OUTSIDE
+    ========================= */
 
     document.addEventListener("click", function (event) {
 
@@ -1934,12 +2120,31 @@ document.addEventListener("DOMContentLoaded", function () {
                 "Open navigation"
             );
 
+
+            if (dropdown) {
+
+                dropdown.classList.remove("open");
+
+            }
+
+
+            if (dropdownToggle) {
+
+                dropdownToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
         }
 
     });
 
 
-    /* Reset menu when returning to desktop */
+    /* =========================
+       RESET WHEN RETURNING TO DESKTOP
+    ========================= */
 
     window.addEventListener("resize", function () {
 
@@ -1958,6 +2163,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 "aria-label",
                 "Open navigation"
             );
+
+
+            if (dropdown) {
+
+                dropdown.classList.remove("open");
+
+            }
+
+
+            if (dropdownToggle) {
+
+                dropdownToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
 
         }
 
