@@ -77,6 +77,10 @@
             text-decoration: none;
         }
 
+        button {
+            font: inherit;
+        }
+
         .container {
             width: min(1120px, 92%);
             margin: auto;
@@ -94,6 +98,7 @@
 
             background: rgba(255, 250, 247, 0.94);
             backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
 
             border-bottom: 1px solid var(--border);
         }
@@ -104,6 +109,8 @@
             display: flex;
             align-items: center;
             justify-content: space-between;
+
+            position: relative;
         }
 
         .logo {
@@ -116,6 +123,11 @@
             color: var(--accent);
         }
 
+
+        /* ==============================
+           NAV LINKS
+        ============================== */
+
         .nav-links {
             display: flex;
             gap: 28px;
@@ -125,16 +137,107 @@
             font-weight: 600;
         }
 
-        .nav-links a {
+        .nav-links > a,
+        .dropdown-toggle {
+            color: var(--dark);
             transition: 0.3s ease;
         }
 
-        .nav-links a:hover {
+        .nav-links > a:hover,
+        .dropdown-toggle:hover {
             color: var(--accent);
         }
 
+
+        /* ==============================
+           DROPDOWN
+        ============================== */
+
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-toggle {
+            border: 0;
+            background: transparent;
+
+            padding: 5px 0;
+
+            font-family: var(--sans);
+            font-size: 14px;
+            font-weight: 600;
+
+            cursor: pointer;
+        }
+
+        .dropdown-menu {
+            position: absolute;
+
+            top: calc(100% + 15px);
+            left: 50%;
+
+            width: 190px;
+
+            padding: 8px;
+
+            background: rgba(255, 250, 247, 0.98);
+
+            border: 1px solid var(--border);
+            border-radius: 16px;
+
+            box-shadow: var(--shadow);
+
+            opacity: 0;
+            visibility: hidden;
+
+            transform: translateX(-50%) translateY(-8px);
+
+            transition:
+                opacity 0.25s ease,
+                transform 0.25s ease,
+                visibility 0.25s ease;
+
+            z-index: 1001;
+        }
+
+        .dropdown-menu a {
+            display: block;
+
+            padding: 10px 13px;
+
+            border-radius: 10px;
+
+            color: var(--text);
+
+            font-size: 13px;
+
+            transition: 0.25s ease;
+        }
+
+        .dropdown-menu a:hover {
+            background: var(--soft-pink);
+            color: var(--accent-dark);
+        }
+
+        .dropdown.open .dropdown-menu {
+            opacity: 1;
+            visibility: visible;
+
+            transform: translateX(-50%) translateY(0);
+        }
+
+        .dropdown.open .dropdown-toggle {
+            color: var(--accent);
+        }
+
+
+        /* ==============================
+           BACK BUTTON
+        ============================== */
+
         .back-btn {
             padding: 9px 17px;
+
             border: 1px solid var(--dark);
             border-radius: 30px;
         }
@@ -142,6 +245,63 @@
         .back-btn:hover {
             background: var(--dark);
             color: white !important;
+        }
+
+
+        /* ==============================
+           MOBILE MENU BUTTON
+        ============================== */
+
+        .menu-toggle {
+            display: none;
+
+            width: 44px;
+            height: 44px;
+
+            border: 1px solid var(--border);
+            border-radius: 12px;
+
+            background: white;
+
+            cursor: pointer;
+
+            padding: 9px;
+
+            align-items: center;
+            justify-content: center;
+
+            flex-direction: column;
+            gap: 5px;
+
+            z-index: 1002;
+        }
+
+        .menu-toggle span {
+            width: 22px;
+            height: 2px;
+
+            background: var(--dark);
+
+            border-radius: 5px;
+
+            transition: 0.3s ease;
+        }
+
+
+        /* ==============================
+           ANIMATED X
+        ============================== */
+
+        .menu-toggle.active span:nth-child(1) {
+            transform: translateY(7px) rotate(45deg);
+        }
+
+        .menu-toggle.active span:nth-child(2) {
+            opacity: 0;
+        }
+
+        .menu-toggle.active span:nth-child(3) {
+            transform: translateY(-7px) rotate(-45deg);
         }
 
 
@@ -660,13 +820,147 @@
 
         @media (max-width: 850px) {
 
-            .nav-links {
-                gap: 12px;
+            /* ==============================
+               MOBILE MENU
+            ============================== */
+
+            .menu-toggle {
+                display: flex;
             }
 
-            .nav-links a:not(.back-btn) {
+            .nav-links {
                 display: none;
+
+                position: absolute;
+
+                top: calc(100% + 10px);
+                left: 0;
+                right: 0;
+
+                width: 100%;
+
+                padding: 10px;
+
+                flex-direction: column;
+                align-items: stretch;
+
+                gap: 4px;
+
+                background: rgba(255, 250, 247, 0.98);
+
+                border: 1px solid var(--border);
+                border-radius: 20px;
+
+                box-shadow: var(--shadow);
+
+                z-index: 1001;
             }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links > a,
+            .dropdown-toggle {
+                width: 100%;
+
+                padding: 13px 16px;
+
+                border-radius: 12px;
+
+                text-align: left;
+
+                font-size: 15px;
+            }
+
+            .nav-links > a:hover,
+            .dropdown-toggle:hover {
+                background: var(--soft-pink);
+            }
+
+
+            /* ==============================
+               MOBILE DROPDOWN
+            ============================== */
+
+            .dropdown {
+                width: 100%;
+            }
+
+            .dropdown-toggle {
+                display: block;
+
+                border: 0;
+                background: transparent;
+
+                cursor: pointer;
+
+                font-family: var(--sans);
+                font-weight: 600;
+            }
+
+            .dropdown-menu {
+                position: static;
+
+                width: 100%;
+
+                padding: 0 0 0 12px;
+
+                background: transparent;
+
+                border: 0;
+                border-radius: 0;
+
+                box-shadow: none;
+
+                transform: none;
+
+                opacity: 0;
+                visibility: hidden;
+
+                max-height: 0;
+
+                overflow: hidden;
+
+                transition:
+                    max-height 0.3s ease,
+                    opacity 0.3s ease,
+                    padding 0.3s ease;
+            }
+
+            .dropdown.open .dropdown-menu {
+                opacity: 1;
+                visibility: visible;
+
+                max-height: 300px;
+
+                padding-top: 4px;
+                padding-bottom: 4px;
+            }
+
+            .dropdown-menu a {
+                padding: 11px 14px;
+
+                font-size: 14px;
+            }
+
+
+            /* ==============================
+               BACK BUTTON
+            ============================== */
+
+            .nav-links .back-btn {
+                width: 100%;
+
+                margin-top: 5px;
+
+                text-align: center;
+            }
+
+
+            /* ==============================
+               EXISTING RESPONSIVE STYLES
+            ============================== */
 
             .hero {
                 padding: 70px 0 50px;
@@ -727,18 +1021,19 @@
 
         }
 
-    
-/* FINAL OVERRIDE: never crop portfolio/campaign artwork */
-.hero-image img,
-.campaign-card img {
-  height: auto !important;
-  max-height: none !important;
-  aspect-ratio: auto !important;
-  object-fit: contain !important;
-  object-position: center center !important;
-}
 
-</style>
+        /* FINAL OVERRIDE: never crop portfolio/campaign artwork */
+
+        .hero-image img,
+        .campaign-card img {
+            height: auto !important;
+            max-height: none !important;
+            aspect-ratio: auto !important;
+            object-fit: contain !important;
+            object-position: center center !important;
+        }
+
+    </style>
 </head>
 
 
@@ -757,29 +1052,75 @@
             SN<span>OOKY</span>
         </a>
 
-        <button class="menu-toggle" type="button"
-                aria-label="Open navigation" aria-expanded="false">
-            <span></span><span></span><span></span>
+
+        <!-- MOBILE MENU BUTTON -->
+
+        <button
+            class="menu-toggle"
+            type="button"
+            aria-label="Open navigation"
+            aria-expanded="false"
+            aria-controls="main-navigation">
+
+            <span></span>
+            <span></span>
+            <span></span>
+
         </button>
 
-        <nav class="nav-links">
 
-            <a href="../index.html#services">Services</a>
-            <a href="../index.html#portfolio">Portfolio</a>
+        <nav class="nav-links" id="main-navigation">
+
+            <a href="../index.html#services">
+                Services
+            </a>
+
+
+            <!-- PORTFOLIO DROPDOWN -->
+
             <div class="dropdown">
-    <button class="dropdown-toggle" type="button">
-        Portfolio ▾
-    </button>
 
-    <div class="dropdown-menu">
-        <a href="#portfolio">All Projects</a>
-        <a href="#skincare">Skincare</a>
-        <a href="#fashion">Fashion</a>
-        <a href="#food">Food</a>
-        <a href="#jewelry">Jewelry</a>
-    </div>
-</div>
-            <a href="../index.html#contact">Contact</a>
+                <button
+                    class="dropdown-toggle"
+                    type="button"
+                    aria-expanded="false">
+
+                    Portfolio ▾
+
+                </button>
+
+
+                <div class="dropdown-menu">
+
+                    <a href="../index.html#portfolio">
+                        All Projects
+                    </a>
+
+                    <a href="#campaign">
+                        Skincare
+                    </a>
+
+                    <a href="../index.html#portfolio">
+                        Fashion
+                    </a>
+
+                    <a href="../index.html#portfolio">
+                        Food
+                    </a>
+
+                    <a href="../index.html#portfolio">
+                        Jewelry
+                    </a>
+
+                </div>
+
+            </div>
+
+
+            <a href="../index.html#contact">
+                Contact
+            </a>
+
 
             <a href="../index.html" class="back-btn">
                 ← Back to Portfolio
@@ -1446,34 +1787,223 @@
 
 
 
+<!-- ==============================
+     MENU SCRIPT
+============================== -->
+
 <script>
+
 document.addEventListener("DOMContentLoaded", function () {
+
     const toggle = document.querySelector(".menu-toggle");
     const nav = document.querySelector(".nav-links");
 
-    if (!toggle || !nav) return;
+    const dropdown = document.querySelector(".dropdown");
+    const dropdownToggle = document.querySelector(".dropdown-toggle");
 
-    toggle.addEventListener("click", function () {
+
+    if (!toggle || !nav) {
+        return;
+    }
+
+
+    /* ==============================
+       MOBILE MENU
+    ============================== */
+
+    toggle.addEventListener("click", function (event) {
+
+        event.stopPropagation();
+
         const open = nav.classList.toggle("open");
-        toggle.setAttribute("aria-expanded", String(open));
-        toggle.setAttribute("aria-label", open ? "Close navigation" : "Open navigation");
+
+        toggle.classList.toggle("active", open);
+
+        toggle.setAttribute(
+            "aria-expanded",
+            String(open)
+        );
+
+        toggle.setAttribute(
+            "aria-label",
+            open
+                ? "Close navigation"
+                : "Open navigation"
+        );
+
     });
+
+
+    /* ==============================
+       PORTFOLIO DROPDOWN
+    ============================== */
+
+    if (dropdown && dropdownToggle) {
+
+        dropdownToggle.addEventListener(
+            "click",
+            function (event) {
+
+                event.stopPropagation();
+
+                const open =
+                    dropdown.classList.toggle("open");
+
+                dropdownToggle.setAttribute(
+                    "aria-expanded",
+                    String(open)
+                );
+
+            }
+        );
+
+    }
+
+
+    /* ==============================
+       CLOSE AFTER LINK CLICK
+    ============================== */
 
     nav.querySelectorAll("a").forEach(function (link) {
+
         link.addEventListener("click", function () {
+
             nav.classList.remove("open");
-            toggle.setAttribute("aria-expanded", "false");
-            toggle.setAttribute("aria-label", "Open navigation");
+
+            toggle.classList.remove("active");
+
+            toggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            toggle.setAttribute(
+                "aria-label",
+                "Open navigation"
+            );
+
+
+            if (dropdown) {
+
+                dropdown.classList.remove("open");
+
+            }
+
+
+            if (dropdownToggle) {
+
+                dropdownToggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+            }
+
         });
+
     });
 
-    window.addEventListener("resize", function () {
-        if (window.innerWidth > 850) {
-            nav.classList.remove("open");
-            toggle.setAttribute("aria-expanded", "false");
+
+    /* ==============================
+       CLOSE WHEN CLICKING OUTSIDE
+    ============================== */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                !nav.contains(event.target) &&
+                !toggle.contains(event.target)
+            ) {
+
+                nav.classList.remove("open");
+
+                toggle.classList.remove("active");
+
+                toggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                toggle.setAttribute(
+                    "aria-label",
+                    "Open navigation"
+                );
+
+            }
+
+
+            if (
+                dropdown &&
+                !dropdown.contains(event.target)
+            ) {
+
+                dropdown.classList.remove("open");
+
+                if (dropdownToggle) {
+
+                    dropdownToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+            }
+
         }
-    });
+    );
+
+
+    /* ==============================
+       RESET WHEN RETURNING TO DESKTOP
+    ============================== */
+
+    window.addEventListener(
+        "resize",
+        function () {
+
+            if (window.innerWidth > 850) {
+
+                nav.classList.remove("open");
+
+                toggle.classList.remove("active");
+
+                toggle.setAttribute(
+                    "aria-expanded",
+                    "false"
+                );
+
+                toggle.setAttribute(
+                    "aria-label",
+                    "Open navigation"
+                );
+
+
+                if (dropdown) {
+
+                    dropdown.classList.remove("open");
+
+                }
+
+
+                if (dropdownToggle) {
+
+                    dropdownToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
+
+            }
+
+        }
+    );
+
 });
+
 </script>
 
 </body>
