@@ -41,6 +41,7 @@ content="Snooky Delos Reyes helps small businesses create product marketing grap
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 body {
@@ -48,16 +49,23 @@ body {
     color: var(--dark);
     background: var(--light);
     line-height: 1.6;
+    overflow-x: hidden;
 }
 
 img {
-    width: 100%;
     display: block;
+    max-width: 100%;
+    width: 100%;
+    height: auto;
 }
 
 a {
     text-decoration: none;
     color: inherit;
+}
+
+button {
+    font: inherit;
 }
 
 .container {
@@ -77,26 +85,31 @@ section {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255,250,247,.9);
+    background: rgba(255,250,247,.94);
     backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(234,223,230,.7);
 }
 
 .nav-inner {
-    height: 76px;
+    min-height: 76px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    position: relative;
 }
 
 .logo {
     font-size: 21px;
     font-weight: 700;
+    flex-shrink: 0;
 }
 
 .logo span {
     color: var(--accent);
 }
+
+/* Desktop menu */
 
 .nav-links {
     display: flex;
@@ -107,7 +120,7 @@ section {
 .nav-links a {
     font-size: 14px;
     color: var(--text);
-    transition: .3s;
+    transition: .3s ease;
 }
 
 .nav-links a:hover {
@@ -119,6 +132,50 @@ section {
     color: white !important;
     padding: 11px 20px;
     border-radius: 30px;
+}
+
+.nav-btn:hover {
+    background: var(--accent);
+}
+
+/* Mobile menu button */
+
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: white;
+    cursor: pointer;
+    padding: 9px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1002;
+}
+
+.menu-toggle span {
+    width: 22px;
+    height: 2px;
+    background: var(--dark);
+    border-radius: 5px;
+    transition: .3s ease;
+}
+
+/* Animated X */
+
+.menu-toggle.active span:nth-child(1) {
+    transform: translateY(7px) rotate(45deg);
+}
+
+.menu-toggle.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.menu-toggle.active span:nth-child(3) {
+    transform: translateY(-7px) rotate(-45deg);
 }
 
 /* =========================
@@ -179,10 +236,13 @@ section {
 
 .btn {
     display: inline-flex;
+    align-items: center;
+    justify-content: center;
     padding: 14px 24px;
     border-radius: 50px;
     font-weight: 600;
-    transition: .3s;
+    transition: .3s ease;
+    cursor: pointer;
 }
 
 .btn-primary {
@@ -192,6 +252,7 @@ section {
 
 .btn-primary:hover {
     transform: translateY(-3px);
+    background: var(--accent);
 }
 
 .btn-outline {
@@ -204,10 +265,13 @@ section {
     color: var(--accent);
 }
 
-/* HERO VISUAL */
+/* =========================
+   HERO IMAGE
+========================= */
 
 .hero-visual {
     position: relative;
+    width: 100%;
 }
 
 .hero-card {
@@ -216,16 +280,24 @@ section {
     border-radius: 28px;
     box-shadow: var(--shadow);
     transform: rotate(2deg);
+    overflow: hidden;
 }
 
+/*
+IMPORTANT:
+contain = shows the FULL image.
+No cropping.
+The image keeps its original proportions.
+*/
+
 .hero-card img {
-    border-radius: 18px;
-    aspect-ratio: 4/5;
+    display: block;
     width: 100%;
     height: auto;
-    max-height: 80vh;
+    max-height: 75vh;
     object-fit: contain;
     object-position: center;
+    border-radius: 18px;
     background: var(--soft);
 }
 
@@ -236,6 +308,7 @@ section {
     border-radius: 18px;
     box-shadow: var(--shadow);
     font-weight: 600;
+    z-index: 2;
 }
 
 .floating-card.one {
@@ -249,7 +322,7 @@ section {
 }
 
 /* =========================
-   MINI STRIP
+   TRUST STRIP
 ========================= */
 
 .trust-strip {
@@ -303,7 +376,7 @@ section {
 
 .services-grid {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -312,7 +385,7 @@ section {
     padding: 35px;
     border-radius: 25px;
     border: 1px solid var(--border);
-    transition: .3s;
+    transition: .3s ease;
 }
 
 .service-card:hover {
@@ -369,7 +442,7 @@ section {
 
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 25px;
 }
 
@@ -380,22 +453,39 @@ section {
     border: 1px solid var(--border);
 }
 
+/*
+The container no longer forces 4:3.
+This allows different image sizes to display correctly.
+*/
+
 .project-image {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     overflow: hidden;
+    background: var(--soft);
 }
 
+/*
+IMPORTANT:
+contain + auto height = FULL IMAGE.
+Nothing gets cut off.
+*/
+
 .project-image img {
+    display: block;
     width: 100%;
     height: auto;
-    aspect-ratio: auto;
+    max-width: 100%;
     object-fit: contain;
     object-position: center;
     background: var(--soft);
-    transition: .5s;
+    transition: transform .5s ease;
 }
 
 .project:hover img {
-    transform: scale(1.05);
+    transform: scale(1.02);
 }
 
 .project-info {
@@ -426,7 +516,7 @@ section {
 
 .process-grid {
     display: grid;
-    grid-template-columns: repeat(5,1fr);
+    grid-template-columns: repeat(5, 1fr);
     gap: 15px;
 }
 
@@ -497,7 +587,7 @@ section {
 
 .pricing-grid {
     display: grid;
-    grid-template-columns: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
 }
 
@@ -578,11 +668,14 @@ section {
     border-radius: 30px;
     overflow: hidden;
     box-shadow: var(--shadow);
+    background: var(--soft);
 }
 
 .about-image img {
-    aspect-ratio: 1;
-    object-fit: cover;
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    object-position: center;
 }
 
 .about-text p {
@@ -621,7 +714,7 @@ section {
 
 .cta-box h2 {
     font-family: "Playfair Display", serif;
-    font-size: clamp(38px,5vw,58px);
+    font-size: clamp(38px, 5vw, 58px);
     margin-bottom: 18px;
 }
 
@@ -652,155 +745,129 @@ footer p {
     font-size: 13px;
 }
 
-/* =========================
-   MOBILE
-========================= */
+/* =====================================================
+   TABLET
+===================================================== */
 
-@media(max-width: 850px) {
+@media (max-width: 950px) {
 
-    .nav-links {
-        display: none;
+    .hero-grid {
+        grid-template-columns: 1fr;
+        gap: 50px;
+    }
+
+    .hero-content {
+        text-align: center;
+    }
+
+    .hero p {
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    .buttons {
+        justify-content: center;
+    }
+
+    .hero-visual {
+        max-width: 600px;
+        margin: auto;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .pricing-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .pricing-grid .price-card:last-child {
+        grid-column: 1 / -1;
+        max-width: 500px;
+        width: 100%;
+        margin: auto;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .process-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .why-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .about-grid {
+        grid-template-columns: 1fr;
+        gap: 45px;
+    }
+
+    .about-image {
+        max-width: 500px;
+    }
+}
+
+/* =====================================================
+   MOBILE NAVIGATION
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .container {
+        width: min(100% - 32px, 700px);
     }
 
     section {
         padding: 75px 0;
     }
 
-    .hero-grid,
-    .why-grid,
-    .about-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .hero {
-        padding-top: 50px;
-    }
-
-    .hero-visual {
-        max-width: 520px;
-        margin: auto;
-    }
-
-    .services-grid,
-    .pricing-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .portfolio-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .process-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .price-card.featured {
-        transform: none;
-    }
-
-    .cta-box {
-        padding: 45px 25px;
-    }
-}
-
-@media(max-width: 520px) {
-
-    .hero h1 {
-        font-size: 45px;
-    }
-
-    .hero p {
-        font-size: 16px;
-    }
-
-    .floating-card {
-        display: none;
-    }
-
-    .process-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .trust-items {
-        gap: 15px;
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-
-/* ===== MOBILE NAVIGATION ===== */
-.menu-toggle {
-    display: none;
-    width: 44px;
-    height: 44px;
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    background: var(--white);
-    cursor: pointer;
-    padding: 9px;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 5px;
-    z-index: 1001;
-}
-
-.menu-toggle span {
-    display: block;
-    width: 22px;
-    height: 2px;
-    border-radius: 2px;
-    background: var(--dark);
-    transition: transform .25s ease, opacity .25s ease;
-}
-
-.nav-links {
-    display: flex;
-    align-items: center;
-    gap: 28px;
-}
-
-.nav-links a {
-    text-decoration: none;
-}
-
-@media (max-width: 850px) {
-    .nav-inner {
-        position: relative;
-    }
+    /* Show hamburger */
 
     .menu-toggle {
         display: flex;
-        margin-left: auto;
     }
 
+    /*
+    Hide normal desktop menu.
+    */
+
     .nav-links {
+        display: none;
         position: absolute;
         top: calc(100% + 10px);
         left: 0;
         right: 0;
-        display: none;
+        width: 100%;
+        padding: 10px;
         flex-direction: column;
         align-items: stretch;
-        gap: 0;
-        padding: 10px;
-        background: var(--white);
+        gap: 4px;
+        background: rgba(255,250,247,.98);
         border: 1px solid var(--border);
-        border-radius: 16px;
+        border-radius: 20px;
         box-shadow: var(--shadow);
-        z-index: 1000;
     }
+
+    /*
+    THIS IS THE IMPORTANT FIX.
+    When JavaScript adds "open",
+    the menu becomes visible.
+    */
 
     .nav-links.open {
         display: flex;
     }
 
     .nav-links a {
-        display: block;
         width: 100%;
-        padding: 13px 15px;
-        border-radius: 10px;
+        padding: 13px 16px;
+        border-radius: 12px;
+        font-size: 15px;
     }
 
     .nav-links a:hover {
@@ -808,84 +875,188 @@ footer p {
     }
 
     .nav-links .nav-btn {
-        margin-top: 6px;
+        text-align: center;
+        margin-top: 5px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 60px 0 75px;
+    }
+
+    .hero-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-card {
+        transform: rotate(1deg);
+    }
+
+    /*
+    Full hero image on mobile.
+    */
+
+    .hero-card img {
+        width: 100%;
+        height: auto;
+        max-height: 70vh;
+        object-fit: contain;
+    }
+
+    .floating-card {
+        display: none;
+    }
+
+    .services-grid,
+    .pricing-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .pricing-grid .price-card:last-child {
+        grid-column: auto;
+        max-width: none;
+    }
+
+    .price-card.featured {
+        transform: none;
+    }
+
+    .portfolio-grid {
+        grid-template-columns: 1fr;
+    }
+
+    /*
+    Full portfolio images on mobile.
+    */
+
+    .project-image {
+        width: 100%;
+        height: auto;
+        min-height: 0;
+    }
+
+    .project-image img {
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .cta-box {
+        padding: 50px 30px;
+    }
+}
+
+/* =====================================================
+   SMALL PHONES
+===================================================== */
+
+@media (max-width: 520px) {
+
+    .container {
+        width: min(100% - 28px, 520px);
+    }
+
+    .nav-inner {
+        min-height: 68px;
+    }
+
+    .nav-links {
+        top: calc(100% + 8px);
+    }
+
+    .hero {
+        padding: 45px 0 60px;
+    }
+
+    .hero h1 {
+        font-size: clamp(40px, 12vw, 50px);
+        letter-spacing: -1.5px;
+    }
+
+    .hero p {
+        font-size: 16px;
+    }
+
+    .badge {
+        font-size: 12px;
+        padding: 7px 12px;
+    }
+
+    .buttons {
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .buttons .btn {
+        width: 100%;
+    }
+
+    .hero-card {
+        padding: 10px;
+        border-radius: 20px;
+    }
+
+    .hero-card img {
+        border-radius: 13px;
+        max-height: none;
+    }
+
+    .service-card,
+    .price-card {
+        padding: 27px 22px;
+    }
+
+    .project-info {
+        padding: 21px;
+    }
+
+    .process-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-image {
+        border-radius: 22px;
+    }
+
+    .cta {
+        padding: 60px 0;
+    }
+
+    .cta-box {
+        border-radius: 25px;
+        padding: 42px 20px;
+    }
+
+    .cta-box h2 {
+        font-size: clamp(35px, 10vw, 46px);
+    }
+
+    .trust-items {
+        gap: 10px;
+        flex-direction: column;
+        align-items: center;
         text-align: center;
     }
 
-    .menu-toggle[aria-expanded="true"] span:nth-child(1) {
-        transform: translateY(7px) rotate(45deg);
-    }
-
-    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
-        opacity: 0;
-    }
-
-    .menu-toggle[aria-expanded="true"] span:nth-child(3) {
-        transform: translateY(-7px) rotate(-45deg);
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
     }
 }
 
-/* ===== FULL IMAGE DISPLAY ===== */
-.hero-card img {
-    width: 100%;
-    height: auto;
-    max-height: 80vh;
-    object-fit: contain;
-    object-position: center;
-    background: var(--soft);
-}
+/* =====================================================
+   ACCESSIBILITY
+===================================================== */
 
-.project-image {
-    width: 100%;
-    min-height: 180px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.project-image img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: auto;
-    object-fit: contain;
-    object-position: center;
-    background: var(--soft);
-}
-
-@media (max-width: 850px) {
-    .hero-card img {
-        height: auto;
-        max-height: 75vh;
-        object-fit: contain;
-    }
-
-    .project-image {
-        min-height: 140px;
-    }
-
-    .project-image img {
-        height: auto;
-        max-height: 70vh;
-    }
-}
-
-@media (max-width: 520px) {
-    .hero-card img {
-        height: auto;
-        max-height: 70vh;
-        border-radius: 13px;
-        object-fit: contain;
-    }
-
-    .project-image img {
-        max-height: 60vh;
-    }
-
-    .menu-toggle {
-        width: 42px;
-        height: 42px;
-    }
+.nav-links a:focus-visible,
+.btn:focus-visible,
+.menu-toggle:focus-visible {
+    outline: 3px solid rgba(217,95,158,.35);
+    outline-offset: 3px;
 }
 
 </style>
@@ -905,19 +1076,47 @@ footer p {
 Snooky<span>.</span>
 </a>
 
-<button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+<!-- MOBILE MENU BUTTON -->
+
+<button
+    class="menu-toggle"
+    type="button"
+    aria-label="Open navigation"
+    aria-expanded="false"
+    aria-controls="main-navigation">
+
     <span></span>
     <span></span>
     <span></span>
+
 </button>
 
-<nav class="nav-links">
-<a href="#services">Services</a>
-<a href="#portfolio">Portfolio</a>
-<a href="#process">Process</a>
-<a href="#pricing">Pricing</a>
-<a href="#about">About</a>
-<a href="#contact" class="nav-btn">Hire Me</a>
+<nav class="nav-links" id="main-navigation">
+
+<a href="#services">
+Services
+</a>
+
+<a href="#portfolio">
+Portfolio
+</a>
+
+<a href="#process">
+Process
+</a>
+
+<a href="#pricing">
+Pricing
+</a>
+
+<a href="#about">
+About
+</a>
+
+<a href="#contact" class="nav-btn">
+Hire Me
+</a>
+
 </nav>
 
 </div>
@@ -933,7 +1132,7 @@ Snooky<span>.</span>
 
 <div class="container hero-grid">
 
-<div>
+<div class="hero-content">
 
 <div class="badge">
 ✦ Available for Freelance Projects
@@ -945,7 +1144,9 @@ Helping Businesses
 </h1>
 
 <p>
-I'm Snooky, a Product Marketing & Graphic Design Virtual Assistant. I create attractive product graphics, social media content, and e-commerce materials that help small businesses get noticed online.
+I'm Snooky, a Product Marketing & Graphic Design Virtual Assistant.
+I create attractive product graphics, social media content, and
+e-commerce materials that help small businesses get noticed online.
 </p>
 
 <div class="buttons">
@@ -967,9 +1168,8 @@ Let's Work Together
 
 <div class="hero-card">
 
-<!-- Replace with your best portfolio image -->
-
-<img src="images/hero-product.jpg"
+<img
+src="images/file_00000000bb6882118b25255c2addc109.png"
 alt="Product marketing design portfolio">
 
 </div>
@@ -1026,14 +1226,14 @@ Creative support for businesses that want to grow online.
 </h2>
 
 <p>
-From product graphics to social media content, I help businesses present their products professionally and consistently.
+From product graphics to social media content, I help businesses
+present their products professionally and consistently.
 </p>
 
 </div>
 
 
 <div class="services-grid">
-
 
 <div class="service-card">
 
@@ -1123,7 +1323,8 @@ Turning products into marketing content.
 </h2>
 
 <p>
-A selection of sample projects demonstrating my approach to product presentation and promotional design.
+A selection of sample projects demonstrating my approach to
+product presentation and promotional design.
 </p>
 
 </div>
@@ -1136,7 +1337,8 @@ A selection of sample projects demonstrating my approach to product presentation
 
 <div class="project-image">
 
-<img src="images/skincare.jpg"
+<img
+src="images/skincare.jpg"
 alt="Skincare product marketing design">
 
 </div>
@@ -1150,7 +1352,8 @@ Product Marketing
 <h3>Beauty & Skincare Campaign</h3>
 
 <p>
-Product advertisement, benefits graphic, promotional post, and sale campaign.
+Product advertisement, benefits graphic, promotional post,
+and sale campaign.
 </p>
 
 </div>
@@ -1162,7 +1365,8 @@ Product advertisement, benefits graphic, promotional post, and sale campaign.
 
 <div class="project-image">
 
-<img src="images/fashion.jpg"
+<img
+src="images/b5abfcc6-261d-4152-b39b-baf38750b5ad.png"
 alt="Fashion product marketing design">
 
 </div>
@@ -1176,7 +1380,8 @@ Social Media Design
 <h3>Fashion Product Campaign</h3>
 
 <p>
-New arrival graphics, product showcase, promotional content, and social media posts.
+New arrival graphics, product showcase, promotional content,
+and social media posts.
 </p>
 
 </div>
@@ -1188,7 +1393,8 @@ New arrival graphics, product showcase, promotional content, and social media po
 
 <div class="project-image">
 
-<img src="images/food.jpg"
+<img
+src="images/5c0bd38d-597f-4843-af31-d7fa8129f4a2.png"
 alt="Food product marketing design">
 
 </div>
@@ -1202,7 +1408,8 @@ Food Marketing
 <h3>Food & Beverage Campaign</h3>
 
 <p>
-Promotional graphics, menu design, bundle offer, and social media content.
+Promotional graphics, menu design, bundle offer,
+and social media content.
 </p>
 
 </div>
@@ -1214,7 +1421,8 @@ Promotional graphics, menu design, bundle offer, and social media content.
 
 <div class="project-image">
 
-<img src="images/jewelry.jpg"
+<img
+src="images/81de6481-9800-4ef4-9474-e0f649f61d89.png"
 alt="Jewelry product marketing design">
 
 </div>
@@ -1228,7 +1436,8 @@ Product Branding
 <h3>Jewelry Collection</h3>
 
 <p>
-Product showcase, new collection announcement, and promotional graphics.
+Product showcase, new collection announcement,
+and promotional graphics.
 </p>
 
 </div>
@@ -1269,31 +1478,41 @@ Simple, organized, and focused on your business.
 <div class="process-card">
 <div class="number">01</div>
 <h3>Understand</h3>
-<p>Learn about your business, products, audience, and goals.</p>
+<p>
+Learn about your business, products, audience, and goals.
+</p>
 </div>
 
 <div class="process-card">
 <div class="number">02</div>
 <h3>Plan</h3>
-<p>Choose the right content and promotional direction.</p>
+<p>
+Choose the right content and promotional direction.
+</p>
 </div>
 
 <div class="process-card">
 <div class="number">03</div>
 <h3>Create</h3>
-<p>Design the graphics and prepare the content.</p>
+<p>
+Design the graphics and prepare the content.
+</p>
 </div>
 
 <div class="process-card">
 <div class="number">04</div>
 <h3>Review</h3>
-<p>Receive feedback and make revisions.</p>
+<p>
+Receive feedback and make revisions.
+</p>
 </div>
 
 <div class="process-card">
 <div class="number">05</div>
 <h3>Deliver</h3>
-<p>Provide final files and ready-to-use content.</p>
+<p>
+Provide final files and ready-to-use content.
+</p>
 </div>
 
 </div>
@@ -1324,7 +1543,9 @@ Design with a business purpose.
 </h2>
 
 <p>
-I don't believe good design is only about looking beautiful. It should communicate clearly, support your brand, and help your customers understand what you're offering.
+I don't believe good design is only about looking beautiful.
+It should communicate clearly, support your brand, and help
+your customers understand what you're offering.
 </p>
 
 </div>
@@ -1339,7 +1560,8 @@ I don't believe good design is only about looking beautiful. It should communica
 <h3>🎯 Business-Focused</h3>
 
 <p>
-I consider your product, audience, message, and goal when creating content.
+I consider your product, audience, message, and goal
+when creating content.
 </p>
 
 </div>
@@ -1349,7 +1571,8 @@ I consider your product, audience, message, and goal when creating content.
 <h3>✨ Clean & Engaging</h3>
 
 <p>
-I create simple visuals that make products easier to notice and understand.
+I create simple visuals that make products easier
+to notice and understand.
 </p>
 
 </div>
@@ -1359,7 +1582,8 @@ I create simple visuals that make products easier to notice and understand.
 <h3>🤝 Easy to Work With</h3>
 
 <p>
-Clear communication, attention to instructions, deadlines, and feedback matter to me.
+Clear communication, attention to instructions,
+deadlines, and feedback matter to me.
 </p>
 
 </div>
@@ -1369,7 +1593,8 @@ Clear communication, attention to instructions, deadlines, and feedback matter t
 <h3>📚 Always Learning</h3>
 
 <p>
-I continuously improve my design, marketing, and digital skills.
+I continuously improve my design, marketing,
+and digital skills.
 </p>
 
 </div>
@@ -1400,7 +1625,8 @@ Flexible support for different business needs.
 </h2>
 
 <p>
-Choose a package or request a custom solution based on your business.
+Choose a package or request a custom solution
+based on your business.
 </p>
 
 </div>
@@ -1499,9 +1725,8 @@ Let's Talk
 
 <div class="about-image">
 
-<!-- Replace with your professional photo -->
-
-<img src="images/snooky.jpg"
+<img
+src="images/snooky.jpg"
 alt="Snooky Delos Reyes">
 
 </div>
@@ -1518,15 +1743,21 @@ Hi, I'm Snooky.
 </h2>
 
 <p>
-I'm a freelance Product Marketing & Graphic Design Virtual Assistant who enjoys helping small businesses present and promote their products online.
+I'm a freelance Product Marketing & Graphic Design Virtual
+Assistant who enjoys helping small businesses present and
+promote their products online.
 </p>
 
 <p>
-My work combines graphic design, content creation, product marketing, and e-commerce support. I enjoy turning simple product information and photos into attractive promotional content that businesses can actually use.
+My work combines graphic design, content creation,
+product marketing, and e-commerce support. I enjoy turning
+simple product information and photos into attractive
+promotional content that businesses can actually use.
 </p>
 
 <p>
-I'm detail-oriented, willing to learn, and committed to providing reliable support to every client I work with.
+I'm detail-oriented, willing to learn, and committed to
+providing reliable support to every client I work with.
 </p>
 
 <div class="skills">
@@ -1568,18 +1799,24 @@ Ready to make your products stand out?
 </h2>
 
 <p>
-Whether you need product graphics, social media content, promotional campaigns, or e-commerce support, I'd love to help.
+Whether you need product graphics, social media content,
+promotional campaigns, or e-commerce support,
+I'd love to help.
 </p>
 
 <div class="buttons" style="justify-content:center;">
 
-<a href="mailto:dsnookyd@gmail.com"
+<a
+href="mailto:dsnookyd@gmail.com"
 class="btn btn-primary">
 Email Me
 </a>
 
-<a href="https://www.facebook.com/bysnooky"
-class="btn btn-outline">
+<a
+href="https://www.facebook.com/bysnooky"
+class="btn btn-outline"
+target="_blank"
+rel="noopener noreferrer">
 Message Me
 </a>
 
@@ -1613,50 +1850,122 @@ Product Marketing • Graphic Design • E-commerce
 </footer>
 
 
+<!-- =========================
+     MOBILE MENU SCRIPT
+========================= -->
+
 <script>
+
 document.addEventListener("DOMContentLoaded", function () {
-    const toggle = document.querySelector(".menu-toggle");
-    const nav = document.querySelector(".nav-links");
 
-    if (!toggle || !nav) return;
+    const menuToggle = document.querySelector(".menu-toggle");
+    const navLinks = document.querySelector(".nav-links");
 
-    function closeMenu() {
-        nav.classList.remove("open");
-        toggle.setAttribute("aria-expanded", "false");
-        toggle.setAttribute("aria-label", "Open navigation");
+    if (!menuToggle || !navLinks) {
+        return;
     }
 
-    toggle.addEventListener("click", function () {
-        const isOpen = nav.classList.toggle("open");
-        toggle.setAttribute("aria-expanded", String(isOpen));
-        toggle.setAttribute(
+    /* Open / close menu */
+
+    menuToggle.addEventListener("click", function () {
+
+        const isOpen = navLinks.classList.toggle("open");
+
+        menuToggle.classList.toggle("active", isOpen);
+
+        menuToggle.setAttribute(
+            "aria-expanded",
+            isOpen ? "true" : "false"
+        );
+
+        menuToggle.setAttribute(
             "aria-label",
             isOpen ? "Close navigation" : "Open navigation"
         );
+
     });
 
-    nav.querySelectorAll("a").forEach(function (link) {
-        link.addEventListener("click", closeMenu);
+
+    /* Close menu after clicking a link */
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+
+        link.addEventListener("click", function () {
+
+            navLinks.classList.remove("open");
+
+            menuToggle.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation"
+            );
+
+        });
+
     });
+
+
+    /* Close menu when clicking outside */
 
     document.addEventListener("click", function (event) {
+
         if (
-            nav.classList.contains("open") &&
-            !nav.contains(event.target) &&
-            !toggle.contains(event.target)
+            !navLinks.contains(event.target) &&
+            !menuToggle.contains(event.target)
         ) {
-            closeMenu();
+
+            navLinks.classList.remove("open");
+
+            menuToggle.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation"
+            );
+
         }
+
     });
 
+
+    /* Reset menu when returning to desktop */
+
     window.addEventListener("resize", function () {
+
         if (window.innerWidth > 850) {
-            closeMenu();
+
+            navLinks.classList.remove("open");
+
+            menuToggle.classList.remove("active");
+
+            menuToggle.setAttribute(
+                "aria-expanded",
+                "false"
+            );
+
+            menuToggle.setAttribute(
+                "aria-label",
+                "Open navigation"
+            );
+
         }
+
     });
+
 });
+
 </script>
 
 </body>
 </html>
-```
