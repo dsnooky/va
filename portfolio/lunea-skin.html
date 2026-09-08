@@ -1,0 +1,1420 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Luméa Skin | Product Marketing Case Study</title>
+
+    <meta name="description"
+          content="Luméa Skin Glow & Hydration Campaign — a product marketing and graphic design concept by Snooky Delos Reyes.">
+
+    <meta name="author" content="Snooky Delos Reyes">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+          rel="stylesheet">
+
+    <style>
+
+        /* ==============================
+           ROOT
+        ============================== */
+
+        :root {
+            --dark: #17151a;
+            --text: #514b50;
+            --muted: #81777e;
+
+            --cream: #fffaf7;
+            --white: #ffffff;
+
+            --accent: #b85f7f;
+            --accent-dark: #914762;
+
+            --soft-pink: #f8e9ee;
+            --soft-beige: #f4ece5;
+
+            --border: #eadde2;
+
+            --shadow: 0 20px 60px rgba(55, 30, 40, 0.08);
+
+            --serif: "Playfair Display", serif;
+            --sans: "DM Sans", sans-serif;
+        }
+
+
+        /* ==============================
+           RESET
+        ============================== */
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--cream);
+            color: var(--dark);
+            font-family: var(--sans);
+            line-height: 1.7;
+        }
+
+        img {
+            width: 100%;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none;
+        }
+
+        .container {
+            width: min(1120px, 92%);
+            margin: auto;
+        }
+
+
+        /* ==============================
+           NAVBAR
+        ============================== */
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+
+            background: rgba(255, 250, 247, 0.94);
+            backdrop-filter: blur(12px);
+
+            border-bottom: 1px solid var(--border);
+        }
+
+        .nav-inner {
+            min-height: 72px;
+
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .logo {
+            font-family: var(--serif);
+            font-size: 22px;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: var(--accent);
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            align-items: center;
+
+            font-size: 14px;
+            font-weight: 600;
+        }
+
+        .nav-links a {
+            transition: 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+        }
+
+        .back-btn {
+            padding: 9px 17px;
+            border: 1px solid var(--dark);
+            border-radius: 30px;
+        }
+
+        .back-btn:hover {
+            background: var(--dark);
+            color: white !important;
+        }
+
+
+        /* ==============================
+           HERO
+        ============================== */
+
+        .hero {
+            padding: 100px 0 70px;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 0.9fr 1.1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+
+            padding: 7px 13px;
+
+            border-radius: 30px;
+
+            background: var(--soft-pink);
+            color: var(--accent-dark);
+
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .hero h1 {
+            margin-top: 22px;
+
+            font-family: var(--serif);
+            font-size: clamp(48px, 7vw, 82px);
+            line-height: 1.02;
+            font-weight: 600;
+        }
+
+        .hero h1 span {
+            color: var(--accent);
+        }
+
+        .hero-subtitle {
+            margin-top: 20px;
+
+            font-family: var(--serif);
+            font-size: 27px;
+            color: var(--text);
+        }
+
+        .hero-description {
+            margin-top: 20px;
+            max-width: 560px;
+
+            color: var(--muted);
+            font-size: 16px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 12px;
+            margin-top: 30px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
+
+            padding: 13px 22px;
+
+            border-radius: 30px;
+
+            font-size: 14px;
+            font-weight: 700;
+
+            transition: 0.3s ease;
+        }
+
+        .btn-primary {
+            background: var(--dark);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            background: var(--accent);
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border);
+            background: white;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+
+        /* ==============================
+           HERO IMAGE
+        ============================== */
+
+        .hero-image {
+            position: relative;
+        }
+
+        .hero-image::before {
+            content: "";
+
+            position: absolute;
+
+            width: 180px;
+            height: 180px;
+
+            background: var(--soft-pink);
+
+            border-radius: 50%;
+
+            top: -40px;
+            right: -40px;
+
+            z-index: -1;
+        }
+
+        .hero-image img {
+            border-radius: 25px;
+            box-shadow: var(--shadow);
+        }
+
+
+        /* ==============================
+           PROJECT INFO
+        ============================== */
+
+        .project-info {
+            padding: 40px 0 90px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px;
+        }
+
+        .info-card {
+            padding: 28px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+            border-radius: 18px;
+
+            box-shadow: 0 10px 35px rgba(40, 20, 30, 0.04);
+        }
+
+        .info-card small {
+            display: block;
+
+            margin-bottom: 7px;
+
+            color: var(--muted);
+
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .info-card strong {
+            font-size: 16px;
+        }
+
+
+        /* ==============================
+           SECTION
+        ============================== */
+
+        section {
+            padding: 90px 0;
+        }
+
+        .section-heading {
+            max-width: 700px;
+            margin-bottom: 45px;
+        }
+
+        .section-number {
+            color: var(--accent);
+
+            font-size: 12px;
+            font-weight: 700;
+            letter-spacing: 2px;
+        }
+
+        .section-heading h2 {
+            margin-top: 8px;
+
+            font-family: var(--serif);
+            font-size: clamp(34px, 5vw, 52px);
+            line-height: 1.15;
+        }
+
+        .section-heading p {
+            margin-top: 15px;
+
+            color: var(--muted);
+        }
+
+
+        /* ==============================
+           BRAND STORY
+        ============================== */
+
+        .story {
+            background: white;
+        }
+
+        .story-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .story-text p {
+            color: var(--text);
+            margin-bottom: 18px;
+        }
+
+        .quote {
+            margin-top: 25px;
+
+            padding: 22px;
+
+            border-left: 3px solid var(--accent);
+
+            background: var(--soft-pink);
+
+            font-family: var(--serif);
+            font-size: 21px;
+        }
+
+        .brand-box {
+            padding: 50px 35px;
+
+            border-radius: 25px;
+
+            background:
+                linear-gradient(
+                    145deg,
+                    #f8eee9,
+                    #f7e5eb
+                );
+
+            text-align: center;
+        }
+
+        .brand-box h3 {
+            font-family: var(--serif);
+            font-size: 42px;
+            letter-spacing: 2px;
+        }
+
+        .brand-box p {
+            margin-top: 8px;
+
+            color: var(--accent-dark);
+
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+
+
+        /* ==============================
+           GOAL
+        ============================== */
+
+        .goal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+        }
+
+        .goal-list {
+            display: grid;
+            gap: 15px;
+        }
+
+        .goal-item {
+            padding: 20px;
+
+            background: white;
+
+            border: 1px solid var(--border);
+            border-radius: 14px;
+        }
+
+        .goal-item strong {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .goal-item span {
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+        .strategy-box {
+            padding: 35px;
+
+            background: var(--dark);
+            color: white;
+
+            border-radius: 25px;
+        }
+
+        .strategy-box h3 {
+            font-family: var(--serif);
+            font-size: 32px;
+        }
+
+        .strategy-box ul {
+            margin-top: 20px;
+            padding-left: 20px;
+        }
+
+        .strategy-box li {
+            margin: 10px 0;
+            color: #ddd;
+        }
+
+
+        /* ==============================
+           CAMPAIGN GALLERY
+        ============================== */
+
+        .campaign {
+            background: var(--soft-beige);
+        }
+
+        .campaign-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .campaign-card {
+            background: white;
+
+            padding: 12px;
+
+            border-radius: 20px;
+
+            box-shadow: var(--shadow);
+
+            overflow: hidden;
+        }
+
+        .campaign-card img {
+            border-radius: 14px;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+        }
+
+        .campaign-content {
+            padding: 20px 12px 12px;
+        }
+
+        .campaign-content span {
+            color: var(--accent);
+
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .campaign-content h3 {
+            margin-top: 4px;
+
+            font-family: var(--serif);
+            font-size: 25px;
+        }
+
+        .campaign-content p {
+            margin-top: 5px;
+
+            color: var(--muted);
+            font-size: 14px;
+        }
+
+
+        /* ==============================
+           ROLE
+        ============================== */
+
+        .role {
+            background: white;
+        }
+
+        .role-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 70px;
+            align-items: center;
+        }
+
+        .role-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 25px;
+        }
+
+        .role-tag {
+            padding: 9px 15px;
+
+            border-radius: 30px;
+
+            background: var(--soft-pink);
+
+            color: var(--accent-dark);
+
+            font-size: 13px;
+            font-weight: 600;
+        }
+
+        .result-box {
+            padding: 40px;
+
+            background: var(--soft-beige);
+
+            border-radius: 25px;
+        }
+
+        .result-box h3 {
+            font-family: var(--serif);
+            font-size: 32px;
+        }
+
+        .result-box p {
+            margin-top: 12px;
+            color: var(--text);
+        }
+
+
+        /* ==============================
+           CTA
+        ============================== */
+
+        .cta {
+            padding: 100px 0;
+
+            background: var(--dark);
+            color: white;
+
+            text-align: center;
+        }
+
+        .cta h2 {
+            font-family: var(--serif);
+            font-size: clamp(38px, 6vw, 62px);
+        }
+
+        .cta p {
+            max-width: 600px;
+            margin: 15px auto 30px;
+
+            color: #c9c4c7;
+        }
+
+        .cta .btn {
+            background: white;
+            color: var(--dark);
+        }
+
+        .cta .btn:hover {
+            background: var(--accent);
+            color: white;
+        }
+
+
+        /* ==============================
+           FOOTER
+        ============================== */
+
+        footer {
+            padding: 25px 0;
+
+            background: var(--dark);
+
+            border-top: 1px solid #333;
+
+            color: #aaa;
+
+            text-align: center;
+
+            font-size: 13px;
+        }
+
+
+        /* ==============================
+           RESPONSIVE
+        ============================== */
+
+        @media (max-width: 850px) {
+
+            .nav-links {
+                gap: 12px;
+            }
+
+            .nav-links a:not(.back-btn) {
+                display: none;
+            }
+
+            .hero {
+                padding: 70px 0 50px;
+            }
+
+            .hero-grid,
+            .story-grid,
+            .goal-grid,
+            .role-grid {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .info-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .campaign-grid {
+                grid-template-columns: 1fr;
+            }
+
+            section {
+                padding: 70px 0;
+            }
+        }
+
+
+        @media (max-width: 500px) {
+
+            .logo {
+                font-size: 18px;
+            }
+
+            .hero h1 {
+                font-size: 50px;
+            }
+
+            .hero-subtitle {
+                font-size: 22px;
+            }
+
+            .hero-description {
+                font-size: 14px;
+            }
+
+            .brand-box h3 {
+                font-size: 32px;
+            }
+
+            .campaign-content h3 {
+                font-size: 22px;
+            }
+
+            .strategy-box,
+            .result-box {
+                padding: 25px;
+            }
+
+        }
+
+    </style>
+</head>
+
+
+<body>
+
+
+<!-- ==============================
+     NAVIGATION
+============================== -->
+
+<header class="navbar">
+
+    <div class="container nav-inner">
+
+        <a href="../index.html" class="logo">
+            SN<span>OOKY</span>
+        </a>
+
+        <nav class="nav-links">
+
+            <a href="../index.html#services">Services</a>
+            <a href="../index.html#portfolio">Portfolio</a>
+            <a href="../index.html#contact">Contact</a>
+
+            <a href="../index.html" class="back-btn">
+                ← Back to Portfolio
+            </a>
+
+        </nav>
+
+    </div>
+
+</header>
+
+
+
+<!-- ==============================
+     HERO
+============================== -->
+
+<main>
+
+<section class="hero">
+
+    <div class="container hero-grid">
+
+        <div>
+
+            <span class="eyebrow">
+                Concept Project
+            </span>
+
+            <h1>
+                Luméa<br>
+                <span>Skin</span>
+            </h1>
+
+            <div class="hero-subtitle">
+                Glow & Hydration Campaign
+            </div>
+
+            <p class="hero-description">
+                A fictional skincare campaign created to demonstrate
+                product marketing, graphic design, promotional content,
+                and social media campaign direction.
+            </p>
+
+            <div class="hero-buttons">
+
+                <a href="#campaign" class="btn btn-primary">
+                    View Campaign
+                </a>
+
+                <a href="../index.html#contact" class="btn btn-outline">
+                    Work With Me
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-image">
+
+            <!-- Replace this image with your generated LUMÉA image -->
+
+            <img
+                src="../images/lumea-skin/lumea-campaign.jpg"
+                alt="Luméa Skin Glow and Hydration Campaign">
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     PROJECT INFO
+============================== -->
+
+<section class="project-info">
+
+    <div class="container">
+
+        <div class="info-grid">
+
+            <div class="info-card">
+
+                <small>Industry</small>
+
+                <strong>Beauty & Skincare</strong>
+
+            </div>
+
+            <div class="info-card">
+
+                <small>Campaign</small>
+
+                <strong>Glow & Hydration</strong>
+
+            </div>
+
+            <div class="info-card">
+
+                <small>Project Type</small>
+
+                <strong>Portfolio Concept</strong>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     BRAND
+============================== -->
+
+<section class="story">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-number">
+                01 — THE BRAND
+            </span>
+
+            <h2>
+                Clean skincare with a
+                confident visual identity.
+            </h2>
+
+        </div>
+
+
+        <div class="story-grid">
+
+            <div class="story-text">
+
+                <p>
+                    Luméa Skin is a fictional skincare brand focused
+                    on simple, everyday hydration and healthy-looking skin.
+                </p>
+
+                <p>
+                    The visual identity was designed to feel clean,
+                    feminine, premium, and approachable while keeping
+                    the products as the main focus.
+                </p>
+
+                <div class="quote">
+                    “Glow starts with hydration.”
+                </div>
+
+            </div>
+
+
+            <div class="brand-box">
+
+                <h3>LUMÉA SKIN</h3>
+
+                <p>
+                    Pure Skin. Real Confidence.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     MARKETING GOAL
+============================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-number">
+                02 — MARKETING GOAL
+            </span>
+
+            <h2>
+                Turn product features into
+                content customers notice.
+            </h2>
+
+        </div>
+
+
+        <div class="goal-grid">
+
+
+            <div class="goal-list">
+
+                <div class="goal-item">
+
+                    <strong>Build Product Awareness</strong>
+
+                    <span>
+                        Introduce the hydration-focused product line
+                        through attractive promotional visuals.
+                    </span>
+
+                </div>
+
+
+                <div class="goal-item">
+
+                    <strong>Highlight Benefits</strong>
+
+                    <span>
+                        Communicate product benefits in a simple,
+                        easy-to-understand format.
+                    </span>
+
+                </div>
+
+
+                <div class="goal-item">
+
+                    <strong>Promote the Product Duo</strong>
+
+                    <span>
+                        Use a limited-time promotional offer to
+                        encourage purchase interest.
+                    </span>
+
+                </div>
+
+
+                <div class="goal-item">
+
+                    <strong>Create Social Content</strong>
+
+                    <span>
+                        Adapt the campaign into engaging
+                        Facebook and Instagram content.
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="strategy-box">
+
+                <h3>
+                    Content Strategy
+                </h3>
+
+                <ul>
+
+                    <li>Product awareness</li>
+
+                    <li>Product education</li>
+
+                    <li>Benefits-focused content</li>
+
+                    <li>Promotional content</li>
+
+                    <li>Lifestyle storytelling</li>
+
+                    <li>Social media engagement</li>
+
+                </ul>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     CAMPAIGN
+============================== -->
+
+<section class="campaign" id="campaign">
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-number">
+                03 — CAMPAIGN DESIGNS
+            </span>
+
+            <h2>
+                One campaign.
+                Five marketing visuals.
+            </h2>
+
+            <p>
+                Each design was created to serve a different
+                purpose within the product marketing campaign.
+            </p>
+
+        </div>
+
+
+        <div class="campaign-grid">
+
+
+            <!-- 01 -->
+
+            <article class="campaign-card">
+
+                <img
+                    src="../images/lumea-skin/hero.jpg"
+                    alt="Luméa Skin Hero Product Advertisement">
+
+                <div class="campaign-content">
+
+                    <span>
+                        01 — Hero Product Ad
+                    </span>
+
+                    <h3>
+                        Glow Starts With Hydration
+                    </h3>
+
+                    <p>
+                        A high-impact product introduction designed
+                        to immediately communicate the campaign message.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- 02 -->
+
+            <article class="campaign-card">
+
+                <img
+                    src="../images/lumea-skin/benefits.jpg"
+                    alt="Luméa Skin Benefits Graphic">
+
+                <div class="campaign-content">
+
+                    <span>
+                        02 — Benefits Graphic
+                    </span>
+
+                    <h3>
+                        3 Reasons Your Skin Will Love It
+                    </h3>
+
+                    <p>
+                        Educational content that breaks down the
+                        product benefits into easy-to-read points.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- 03 -->
+
+            <article class="campaign-card">
+
+                <img
+                    src="../images/lumea-skin/promo.jpg"
+                    alt="Luméa Skin Promotional Graphic">
+
+                <div class="campaign-content">
+
+                    <span>
+                        03 — Promotional Graphic
+                    </span>
+
+                    <h3>
+                        Glow Duo — Save 20%
+                    </h3>
+
+                    <p>
+                        A promotional visual designed to create
+                        urgency and encourage customers to shop.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- 04 -->
+
+            <article class="campaign-card">
+
+                <img
+                    src="../images/lumea-skin/showcase.jpg"
+                    alt="Luméa Skin Product Showcase">
+
+                <div class="campaign-content">
+
+                    <span>
+                        04 — Product Showcase
+                    </span>
+
+                    <h3>
+                        The Perfect Skin Pair
+                    </h3>
+
+                    <p>
+                        A clean product-focused composition highlighting
+                        the serum and moisturizer together.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+            <!-- 05 -->
+
+            <article class="campaign-card">
+
+                <img
+                    src="../images/lumea-skin/social-post.jpg"
+                    alt="Luméa Skin Social Media Post">
+
+                <div class="campaign-content">
+
+                    <span>
+                        05 — Social Media Post
+                    </span>
+
+                    <h3>
+                        Your 5-Minute Glow Routine
+                    </h3>
+
+                    <p>
+                        Lifestyle-oriented content designed for
+                        Facebook and Instagram audiences.
+                    </p>
+
+                </div>
+
+            </article>
+
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     VISUAL DIRECTION
+============================== -->
+
+<section>
+
+    <div class="container">
+
+        <div class="section-heading">
+
+            <span class="section-number">
+                04 — VISUAL DIRECTION
+            </span>
+
+            <h2>
+                Soft, premium and
+                product-focused.
+            </h2>
+
+        </div>
+
+
+        <div class="goal-grid">
+
+            <div>
+
+                <p>
+                    The campaign uses warm neutrals, soft blush tones,
+                    elegant typography, natural textures, and generous
+                    whitespace to create a premium skincare aesthetic.
+                </p>
+
+                <div class="role-list">
+
+                    <span class="role-tag">Cream</span>
+                    <span class="role-tag">Blush</span>
+                    <span class="role-tag">Gold</span>
+                    <span class="role-tag">Minimal</span>
+                    <span class="role-tag">Feminine</span>
+                    <span class="role-tag">Natural</span>
+
+                </div>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <h3>
+                    Design Principle
+                </h3>
+
+                <p>
+                    Keep the product visible, make the message
+                    easy to understand, and create enough visual
+                    emotion to make the audience stop scrolling.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     MY ROLE
+============================== -->
+
+<section class="role">
+
+    <div class="container">
+
+        <div class="role-grid">
+
+            <div>
+
+                <div class="section-heading">
+
+                    <span class="section-number">
+                        05 — MY ROLE
+                    </span>
+
+                    <h2>
+                        From product idea
+                        to campaign visuals.
+                    </h2>
+
+                </div>
+
+                <p>
+                    I approached this project from both a design
+                    and marketing perspective, creating visuals
+                    that are not only attractive but also support
+                    the product's promotional goals.
+                </p>
+
+                <div class="role-list">
+
+                    <span class="role-tag">
+                        Product Marketing
+                    </span>
+
+                    <span class="role-tag">
+                        Graphic Design
+                    </span>
+
+                    <span class="role-tag">
+                        Promotional Content
+                    </span>
+
+                    <span class="role-tag">
+                        Social Media Design
+                    </span>
+
+                    <span class="role-tag">
+                        Campaign Direction
+                    </span>
+
+                    <span class="role-tag">
+                        Content Strategy
+                    </span>
+
+                </div>
+
+            </div>
+
+
+            <div class="result-box">
+
+                <h3>
+                    What this demonstrates
+                </h3>
+
+                <p>
+                    This concept demonstrates my ability to take
+                    a product and develop a cohesive visual campaign
+                    across promotional, educational, and social media
+                    content.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+
+<!-- ==============================
+     CTA
+============================== -->
+
+<section class="cta">
+
+    <div class="container">
+
+        <h2>
+            Have a product to promote?
+        </h2>
+
+        <p>
+            I can help turn your products into attractive,
+            consistent, and marketing-focused content for
+            your social media and online store.
+        </p>
+
+        <a href="../index.html#contact" class="btn">
+            Let's Work Together →
+        </a>
+
+    </div>
+
+</section>
+
+</main>
+
+
+
+<!-- ==============================
+     FOOTER
+============================== -->
+
+<footer>
+
+    <div class="container">
+
+        © 2026 Snooky Delos Reyes · Product Marketing & Graphic Design VA
+
+    </div>
+
+</footer>
+
+
+</body>
+</html>
