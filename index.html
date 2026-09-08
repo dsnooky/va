@@ -736,6 +736,12 @@ footer p {
 Snooky<span>.</span>
 </a>
 
+<button class="menu-toggle" type="button" aria-label="Open navigation" aria-expanded="false">
+    <span></span>
+    <span></span>
+    <span></span>
+</button>
+
 <nav class="nav-links">
 <a href="#services">Services</a>
 <a href="portfolio/lunea-skin.html">Portfolio</a>
@@ -1436,6 +1442,37 @@ Product Marketing • Graphic Design • E-commerce
 </div>
 
 </footer>
+
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+    const toggle = document.querySelector(".menu-toggle");
+    const nav = document.querySelector(".nav-links");
+
+    if (!toggle || !nav) return;
+
+    toggle.addEventListener("click", function () {
+        const isOpen = nav.classList.toggle("open");
+        toggle.setAttribute("aria-expanded", isOpen);
+        toggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+    });
+
+    nav.querySelectorAll("a").forEach(function (link) {
+        link.addEventListener("click", function () {
+            nav.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+            toggle.setAttribute("aria-label", "Open navigation");
+        });
+    });
+
+    window.addEventListener("resize", function () {
+        if (window.innerWidth > 850) {
+            nav.classList.remove("open");
+            toggle.setAttribute("aria-expanded", "false");
+        }
+    });
+});
+</script>
 
 </body>
 </html>
