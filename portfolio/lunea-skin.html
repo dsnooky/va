@@ -727,7 +727,18 @@
 
         }
 
-    </style>
+    
+/* FINAL OVERRIDE: never crop portfolio/campaign artwork */
+.hero-image img,
+.campaign-card img {
+  height: auto !important;
+  max-height: none !important;
+  aspect-ratio: auto !important;
+  object-fit: contain !important;
+  object-position: center center !important;
+}
+
+</style>
 </head>
 
 
