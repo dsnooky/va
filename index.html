@@ -728,6 +728,166 @@ footer p {
     }
 }
 
+
+/* ===== MOBILE NAVIGATION ===== */
+.menu-toggle {
+    display: none;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--white);
+    cursor: pointer;
+    padding: 9px;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    gap: 5px;
+    z-index: 1001;
+}
+
+.menu-toggle span {
+    display: block;
+    width: 22px;
+    height: 2px;
+    border-radius: 2px;
+    background: var(--dark);
+    transition: transform .25s ease, opacity .25s ease;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.nav-links a {
+    text-decoration: none;
+}
+
+@media (max-width: 850px) {
+    .nav-inner {
+        position: relative;
+    }
+
+    .menu-toggle {
+        display: flex;
+        margin-left: auto;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: calc(100% + 10px);
+        left: 0;
+        right: 0;
+        display: none;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0;
+        padding: 10px;
+        background: var(--white);
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        box-shadow: var(--shadow);
+        z-index: 1000;
+    }
+
+    .nav-links.open {
+        display: flex;
+    }
+
+    .nav-links a {
+        display: block;
+        width: 100%;
+        padding: 13px 15px;
+        border-radius: 10px;
+    }
+
+    .nav-links a:hover {
+        background: var(--soft);
+    }
+
+    .nav-links .nav-btn {
+        margin-top: 6px;
+        text-align: center;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(1) {
+        transform: translateY(7px) rotate(45deg);
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(2) {
+        opacity: 0;
+    }
+
+    .menu-toggle[aria-expanded="true"] span:nth-child(3) {
+        transform: translateY(-7px) rotate(-45deg);
+    }
+}
+
+/* ===== FULL IMAGE DISPLAY ===== */
+.hero-card img {
+    width: 100%;
+    height: auto;
+    max-height: 80vh;
+    object-fit: contain;
+    object-position: center;
+    background: var(--soft);
+}
+
+.project-image {
+    width: 100%;
+    min-height: 180px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.project-image img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: auto;
+    object-fit: contain;
+    object-position: center;
+    background: var(--soft);
+}
+
+@media (max-width: 850px) {
+    .hero-card img {
+        height: auto;
+        max-height: 75vh;
+        object-fit: contain;
+    }
+
+    .project-image {
+        min-height: 140px;
+    }
+
+    .project-image img {
+        height: auto;
+        max-height: 70vh;
+    }
+}
+
+@media (max-width: 520px) {
+    .hero-card img {
+        height: auto;
+        max-height: 70vh;
+        border-radius: 13px;
+        object-fit: contain;
+    }
+
+    .project-image img {
+        max-height: 60vh;
+    }
+
+    .menu-toggle {
+        width: 42px;
+        height: 42px;
+    }
+}
+
 </style>
 </head>
 
@@ -753,7 +913,7 @@ Snooky<span>.</span>
 
 <nav class="nav-links">
 <a href="#services">Services</a>
-<a href="portfolio/lunea-skin.html">Portfolio</a>
+<a href="#portfolio">Portfolio</a>
 <a href="#process">Process</a>
 <a href="#pricing">Pricing</a>
 <a href="#about">About</a>
@@ -809,7 +969,7 @@ Let's Work Together
 
 <!-- Replace with your best portfolio image -->
 
-<img src="images/file_00000000bb6882118b25255c2addc109.png"
+<img src="images/hero-product.jpg"
 alt="Product marketing design portfolio">
 
 </div>
@@ -1002,7 +1162,7 @@ Product advertisement, benefits graphic, promotional post, and sale campaign.
 
 <div class="project-image">
 
-<img src="images/b5abfcc6-261d-4152-b39b-baf38750b5ad.png"
+<img src="images/fashion.jpg"
 alt="Fashion product marketing design">
 
 </div>
@@ -1028,7 +1188,7 @@ New arrival graphics, product showcase, promotional content, and social media po
 
 <div class="project-image">
 
-<img src="images/5c0bd38d-597f-4843-af31-d7fa8129f4a2.png"
+<img src="images/food.jpg"
 alt="Food product marketing design">
 
 </div>
@@ -1054,7 +1214,7 @@ Promotional graphics, menu design, bundle offer, and social media content.
 
 <div class="project-image">
 
-<img src="images/81de6481-9800-4ef4-9474-e0f649f61d89.png"
+<img src="images/jewelry.jpg"
 alt="Jewelry product marketing design">
 
 </div>
@@ -1460,24 +1620,38 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!toggle || !nav) return;
 
+    function closeMenu() {
+        nav.classList.remove("open");
+        toggle.setAttribute("aria-expanded", "false");
+        toggle.setAttribute("aria-label", "Open navigation");
+    }
+
     toggle.addEventListener("click", function () {
         const isOpen = nav.classList.toggle("open");
-        toggle.setAttribute("aria-expanded", isOpen);
-        toggle.setAttribute("aria-label", isOpen ? "Close navigation" : "Open navigation");
+        toggle.setAttribute("aria-expanded", String(isOpen));
+        toggle.setAttribute(
+            "aria-label",
+            isOpen ? "Close navigation" : "Open navigation"
+        );
     });
 
     nav.querySelectorAll("a").forEach(function (link) {
-        link.addEventListener("click", function () {
-            nav.classList.remove("open");
-            toggle.setAttribute("aria-expanded", "false");
-            toggle.setAttribute("aria-label", "Open navigation");
-        });
+        link.addEventListener("click", closeMenu);
+    });
+
+    document.addEventListener("click", function (event) {
+        if (
+            nav.classList.contains("open") &&
+            !nav.contains(event.target) &&
+            !toggle.contains(event.target)
+        ) {
+            closeMenu();
+        }
     });
 
     window.addEventListener("resize", function () {
         if (window.innerWidth > 850) {
-            nav.classList.remove("open");
-            toggle.setAttribute("aria-expanded", "false");
+            closeMenu();
         }
     });
 });
