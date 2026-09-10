@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -16,9 +17,9 @@ content="Professional virtual assistant specializing in graphic design, social m
 
 <style>
 
-/* =========================
+/* =====================================================
    GLOBAL
-========================= */
+===================================================== */
 
 :root {
     --dark: #17151a;
@@ -77,15 +78,16 @@ section {
     padding: 100px 0;
 }
 
-/* =========================
+
+/* =====================================================
    NAVIGATION
-========================= */
+===================================================== */
 
 .navbar {
     position: sticky;
     top: 0;
     z-index: 1000;
-    background: rgba(255,250,247,.94);
+    background: rgba(255,250,247,.96);
     backdrop-filter: blur(15px);
     -webkit-backdrop-filter: blur(15px);
     border-bottom: 1px solid rgba(234,223,230,.7);
@@ -109,7 +111,10 @@ section {
     color: var(--accent);
 }
 
-/* Desktop menu */
+
+/* =====================================================
+   DESKTOP NAV
+===================================================== */
 
 .nav-links {
     display: flex;
@@ -117,30 +122,32 @@ section {
     align-items: center;
 }
 
-.nav-links a {
+.nav-links > a {
     font-size: 14px;
     color: var(--text);
     transition: .3s ease;
 }
 
-.nav-links a:hover {
+.nav-links > a:hover {
     color: var(--accent);
 }
 
 .nav-btn {
     background: var(--dark);
     color: white !important;
-    padding: 11px 20px;
+    padding: 11px 20px !important;
     border-radius: 30px;
 }
 
 .nav-btn:hover {
-    background: var(--accent);
+    background: var(--accent) !important;
+    color: white !important;
 }
 
-/* =========================
+
+/* =====================================================
    PORTFOLIO DROPDOWN
-========================= */
+===================================================== */
 
 .dropdown {
     position: relative;
@@ -165,7 +172,7 @@ section {
     top: calc(100% + 14px);
     left: 50%;
     transform: translateX(-50%);
-    min-width: 190px;
+    min-width: 200px;
     background: var(--white);
     border: 1px solid var(--border);
     border-radius: 15px;
@@ -175,6 +182,14 @@ section {
     z-index: 1001;
 }
 
+/* IMPORTANT FIX:
+   Dropdown works by hover AND click */
+
+.dropdown:hover .dropdown-menu,
+.dropdown.open .dropdown-menu {
+    display: block;
+}
+
 .dropdown-menu a {
     display: block;
     width: 100%;
@@ -182,6 +197,7 @@ section {
     border-radius: 9px;
     font-size: 14px;
     color: var(--text);
+    transition: .2s ease;
 }
 
 .dropdown-menu a:hover {
@@ -189,15 +205,10 @@ section {
     color: var(--accent);
 }
 
-/* Show dropdown on desktop */
 
-.dropdown:hover .dropdown-menu {
-    display: block;
-}
-
-/* =========================
+/* =====================================================
    MOBILE MENU BUTTON
-========================= */
+===================================================== */
 
 .menu-toggle {
     display: none;
@@ -223,8 +234,6 @@ section {
     transition: .3s ease;
 }
 
-/* Animated X */
-
 .menu-toggle.active span:nth-child(1) {
     transform: translateY(7px) rotate(45deg);
 }
@@ -237,9 +246,10 @@ section {
     transform: translateY(-7px) rotate(-45deg);
 }
 
-/* =========================
+
+/* =====================================================
    HERO
-========================= */
+===================================================== */
 
 .hero {
     min-height: 90vh;
@@ -324,9 +334,10 @@ section {
     color: var(--accent);
 }
 
-/* =========================
+
+/* =====================================================
    HERO IMAGE
-========================= */
+===================================================== */
 
 .hero-visual {
     position: relative;
@@ -341,13 +352,6 @@ section {
     transform: rotate(2deg);
     overflow: hidden;
 }
-
-/*
-IMPORTANT:
-contain = shows the FULL image.
-No cropping.
-The image keeps its original proportions.
-*/
 
 .hero-card img {
     display: block;
@@ -380,9 +384,10 @@ The image keeps its original proportions.
     top: 50px;
 }
 
-/* =========================
+
+/* =====================================================
    TRUST STRIP
-========================= */
+===================================================== */
 
 .trust-strip {
     padding: 25px 0;
@@ -400,9 +405,10 @@ The image keeps its original proportions.
     font-weight: 600;
 }
 
-/* =========================
+
+/* =====================================================
    SECTION HEADINGS
-========================= */
+===================================================== */
 
 .section-heading {
     max-width: 650px;
@@ -429,9 +435,10 @@ The image keeps its original proportions.
     color: var(--text);
 }
 
-/* =========================
+
+/* =====================================================
    SERVICES
-========================= */
+===================================================== */
 
 .services-grid {
     display: grid;
@@ -491,9 +498,10 @@ The image keeps its original proportions.
     margin-right: 8px;
 }
 
-/* =========================
+
+/* =====================================================
    PORTFOLIO
-========================= */
+===================================================== */
 
 .portfolio {
     background: white;
@@ -510,12 +518,13 @@ The image keeps its original proportions.
     border-radius: 25px;
     background: var(--light);
     border: 1px solid var(--border);
+    transition: .3s ease;
 }
 
-/*
-The container no longer forces 4:3.
-This allows different image sizes to display correctly.
-*/
+.project:hover {
+    box-shadow: var(--shadow);
+    transform: translateY(-5px);
+}
 
 .project-image {
     width: 100%;
@@ -525,12 +534,6 @@ This allows different image sizes to display correctly.
     overflow: hidden;
     background: var(--soft);
 }
-
-/*
-IMPORTANT:
-contain + auto height = FULL IMAGE.
-Nothing gets cut off.
-*/
 
 .project-image img {
     display: block;
@@ -569,9 +572,10 @@ Nothing gets cut off.
     font-size: 14px;
 }
 
-/* =========================
+
+/* =====================================================
    PROCESS
-========================= */
+===================================================== */
 
 .process-grid {
     display: grid;
@@ -599,9 +603,10 @@ Nothing gets cut off.
     font-size: 14px;
 }
 
-/* =========================
+
+/* =====================================================
    WHY ME
-========================= */
+===================================================== */
 
 .why {
     background: var(--dark);
@@ -640,9 +645,10 @@ Nothing gets cut off.
     font-size: 14px;
 }
 
-/* =========================
+
+/* =====================================================
    PRICING
-========================= */
+===================================================== */
 
 .pricing-grid {
     display: grid;
@@ -708,9 +714,10 @@ Nothing gets cut off.
     margin-right: 8px;
 }
 
-/* =========================
+
+/* =====================================================
    ABOUT
-========================= */
+===================================================== */
 
 .about {
     background: white;
@@ -756,9 +763,10 @@ Nothing gets cut off.
     font-size: 13px;
 }
 
-/* =========================
+
+/* =====================================================
    CTA
-========================= */
+===================================================== */
 
 .cta {
     padding: 100px 0;
@@ -783,9 +791,10 @@ Nothing gets cut off.
     margin: auto auto 28px;
 }
 
-/* =========================
+
+/* =====================================================
    FOOTER
-========================= */
+===================================================== */
 
 footer {
     padding: 35px 0;
@@ -803,6 +812,7 @@ footer p {
     color: var(--text);
     font-size: 13px;
 }
+
 
 /* =====================================================
    TABLET
@@ -871,6 +881,7 @@ footer p {
     }
 }
 
+
 /* =====================================================
    MOBILE NAVIGATION
 ===================================================== */
@@ -885,15 +896,9 @@ footer p {
         padding: 75px 0;
     }
 
-    /* Show hamburger */
-
     .menu-toggle {
         display: flex;
     }
-
-    /*
-    Hide normal desktop menu.
-    */
 
     .nav-links {
         display: none;
@@ -912,24 +917,18 @@ footer p {
         box-shadow: var(--shadow);
     }
 
-    /*
-    IMPORTANT FIX:
-    When JavaScript adds "open",
-    the menu becomes visible.
-    */
-
     .nav-links.open {
         display: flex;
     }
 
-    .nav-links a {
+    .nav-links > a {
         width: 100%;
         padding: 13px 16px;
         border-radius: 12px;
         font-size: 15px;
     }
 
-    .nav-links a:hover {
+    .nav-links > a:hover {
         background: var(--soft);
     }
 
@@ -937,6 +936,7 @@ footer p {
         text-align: center;
         margin-top: 5px;
     }
+
 
     /* Mobile dropdown */
 
@@ -968,6 +968,11 @@ footer p {
         background: transparent;
     }
 
+    /*
+    On mobile, hover should NOT open the menu.
+    Only clicking Portfolio opens it.
+    */
+
     .dropdown:hover .dropdown-menu {
         display: none;
     }
@@ -979,6 +984,9 @@ footer p {
     .dropdown-menu a {
         padding: 10px 16px;
     }
+
+
+    /* Hero */
 
     .hero {
         min-height: auto;
@@ -993,10 +1001,6 @@ footer p {
         transform: rotate(1deg);
     }
 
-    /*
-    Full hero image on mobile.
-    */
-
     .hero-card img {
         width: 100%;
         height: auto;
@@ -1007,6 +1011,9 @@ footer p {
     .floating-card {
         display: none;
     }
+
+
+    /* Services */
 
     .services-grid,
     .pricing-grid {
@@ -1022,13 +1029,12 @@ footer p {
         transform: none;
     }
 
+
+    /* Portfolio */
+
     .portfolio-grid {
         grid-template-columns: 1fr;
     }
-
-    /*
-    Full portfolio images on mobile.
-    */
 
     .project-image {
         width: 100%;
@@ -1042,14 +1048,21 @@ footer p {
         object-fit: contain;
     }
 
+
+    /* Process */
+
     .process-grid {
         grid-template-columns: 1fr 1fr;
     }
+
+
+    /* CTA */
 
     .cta-box {
         padding: 50px 30px;
     }
 }
+
 
 /* =====================================================
    SMALL PHONES
@@ -1149,6 +1162,7 @@ footer p {
     }
 }
 
+
 /* =====================================================
    ACCESSIBILITY
 ===================================================== */
@@ -1162,13 +1176,14 @@ footer p {
 }
 
 </style>
+
 </head>
 
 <body>
 
-<!-- =========================
+<!-- =====================================================
      NAVIGATION
-========================= -->
+===================================================== -->
 
 <header class="navbar">
 
@@ -1178,18 +1193,20 @@ footer p {
 Snooky<span>.</span>
 </a>
 
-<!-- MOBILE MENU BUTTON -->
+<!-- MOBILE MENU -->
 
 <button
-    class="menu-toggle"
-    type="button"
-    aria-label="Open navigation"
-    aria-expanded="false"
-    aria-controls="main-navigation">
+ class="menu-toggle"
+ type="button"
+ aria-label="Open navigation"
+ aria-expanded="false"
+ aria-controls="main-navigation">
 
-    <span></span>
-    <span></span>
-    <span></span>
+```
+<span></span>
+<span></span>
+<span></span>
+```
 
 </button>
 
@@ -1199,17 +1216,19 @@ Snooky<span>.</span>
 Services
 </a>
 
-<!-- PORTFOLIO DROPDOWN -->
+<!-- PORTFOLIO -->
 
 <div class="dropdown">
 
 <button
-    class="dropdown-toggle"
-    type="button"
-    aria-expanded="false"
-    aria-haspopup="true">
+ class="dropdown-toggle"
+ type="button"
+ aria-expanded="false"
+ aria-haspopup="true">
 
-    Portfolio ▾
+```
+Portfolio ▾
+```
 
 </button>
 
@@ -1222,7 +1241,7 @@ All Projects
 <a href="portfolio/lunea-skin.html">
 Skincare
 </a>
-   
+
 <a href="portfolio/avera.html">
 Fashion
 </a>
@@ -1261,10 +1280,9 @@ Hire Me
 
 </header>
 
-
-<!-- =========================
+<!-- =====================================================
      HERO
-========================= -->
+===================================================== -->
 
 <section class="hero">
 
@@ -1301,7 +1319,6 @@ Let's Work Together
 
 </div>
 
-
 <div class="hero-visual">
 
 <div class="hero-card">
@@ -1326,28 +1343,23 @@ alt="Product marketing design portfolio">
 
 </section>
 
-
-<!-- =========================
+<!-- =====================================================
      TRUST STRIP
-========================= -->
+===================================================== -->
 
 <div class="trust-strip">
 
 <div class="container trust-items">
 
-<span>Product Marketing</span>
-<span>Graphic Design</span>
-<span>Social Media</span>
-<span>E-commerce Support</span>
+<span>Product Marketing</span> <span>Graphic Design</span> <span>Social Media</span> <span>E-commerce Support</span>
 
 </div>
 
 </div>
 
-
-<!-- =========================
+<!-- =====================================================
      SERVICES
-========================= -->
+===================================================== -->
 
 <section id="services">
 
@@ -1369,7 +1381,6 @@ present their products professionally and consistently.
 </p>
 
 </div>
-
 
 <div class="services-grid">
 
@@ -1393,7 +1404,6 @@ Eye-catching visuals designed to make your products stand out.
 
 </div>
 
-
 <div class="service-card">
 
 <div class="icon">📱</div>
@@ -1413,7 +1423,6 @@ Consistent content that helps your business stay visible online.
 </ul>
 
 </div>
-
 
 <div class="service-card">
 
@@ -1441,10 +1450,9 @@ Practical assistance for businesses selling products online.
 
 </section>
 
-
-<!-- =========================
+<!-- =====================================================
      PORTFOLIO
-========================= -->
+===================================================== -->
 
 <section id="portfolio" class="portfolio">
 
@@ -1467,9 +1475,9 @@ product presentation and promotional design.
 
 </div>
 
-
 <div class="portfolio-grid">
 
+<!-- SKINCARE -->
 
 <div class="project" id="skincare">
 
@@ -1487,7 +1495,9 @@ alt="Skincare product marketing design">
 Product Marketing
 </div>
 
-<h3>Beauty & Skincare Campaign</h3>
+<h3>
+Beauty & Skincare Campaign
+</h3>
 
 <p>
 Product advertisement, benefits graphic, promotional post,
@@ -1498,6 +1508,7 @@ and sale campaign.
 
 </div>
 
+<!-- FASHION -->
 
 <div class="project" id="fashion">
 
@@ -1515,7 +1526,9 @@ alt="Fashion product marketing design">
 Social Media Design
 </div>
 
-<h3>Fashion Product Campaign</h3>
+<h3>
+Fashion Product Campaign
+</h3>
 
 <p>
 New arrival graphics, product showcase, promotional content,
@@ -1526,6 +1539,7 @@ and social media posts.
 
 </div>
 
+<!-- FOOD -->
 
 <div class="project" id="food">
 
@@ -1543,7 +1557,9 @@ alt="Food product marketing design">
 Food Marketing
 </div>
 
-<h3>Food & Beverage Campaign</h3>
+<h3>
+Food & Beverage Campaign
+</h3>
 
 <p>
 Promotional graphics, menu design, bundle offer,
@@ -1554,6 +1570,7 @@ and social media content.
 
 </div>
 
+<!-- JEWELRY -->
 
 <div class="project" id="jewelry">
 
@@ -1571,7 +1588,9 @@ alt="Jewelry product marketing design">
 Product Branding
 </div>
 
-<h3>Jewelry Collection</h3>
+<h3>
+Jewelry Collection
+</h3>
 
 <p>
 Product showcase, new collection announcement,
@@ -1582,17 +1601,15 @@ and promotional graphics.
 
 </div>
 
-
 </div>
 
 </div>
 
 </section>
 
-
-<!-- =========================
+<!-- =====================================================
      PROCESS
-========================= -->
+===================================================== -->
 
 <section id="process">
 
@@ -1610,47 +1627,86 @@ Simple, organized, and focused on your business.
 
 </div>
 
-
 <div class="process-grid">
 
 <div class="process-card">
-<div class="number">01</div>
-<h3>Understand</h3>
+
+<div class="number">
+01
+</div>
+
+<h3>
+Understand
+</h3>
+
 <p>
 Learn about your business, products, audience, and goals.
 </p>
+
 </div>
 
 <div class="process-card">
-<div class="number">02</div>
-<h3>Plan</h3>
+
+<div class="number">
+02
+</div>
+
+<h3>
+Plan
+</h3>
+
 <p>
 Choose the right content and promotional direction.
 </p>
+
 </div>
 
 <div class="process-card">
-<div class="number">03</div>
-<h3>Create</h3>
+
+<div class="number">
+03
+</div>
+
+<h3>
+Create
+</h3>
+
 <p>
 Design the graphics and prepare the content.
 </p>
+
 </div>
 
 <div class="process-card">
-<div class="number">04</div>
-<h3>Review</h3>
+
+<div class="number">
+04
+</div>
+
+<h3>
+Review
+</h3>
+
 <p>
 Receive feedback and make revisions.
 </p>
+
 </div>
 
 <div class="process-card">
-<div class="number">05</div>
-<h3>Deliver</h3>
+
+<div class="number">
+05
+</div>
+
+<h3>
+Deliver
+</h3>
+
 <p>
 Provide final files and ready-to-use content.
 </p>
+
 </div>
 
 </div>
@@ -1659,10 +1715,9 @@ Provide final files and ready-to-use content.
 
 </section>
 
-
-<!-- =========================
+<!-- =====================================================
      WHY ME
-========================= -->
+===================================================== -->
 
 <section class="why">
 
@@ -1690,12 +1745,13 @@ your customers understand what you're offering.
 
 </div>
 
-
 <div class="reasons">
 
 <div class="reason">
 
-<h3>🎯 Business-Focused</h3>
+<h3>
+🎯 Business-Focused
+</h3>
 
 <p>
 I consider your product, audience, message, and goal
@@ -1706,7 +1762,9 @@ when creating content.
 
 <div class="reason">
 
-<h3>✨ Clean & Engaging</h3>
+<h3>
+✨ Clean & Engaging
+</h3>
 
 <p>
 I create simple visuals that make products easier
@@ -1717,7 +1775,9 @@ to notice and understand.
 
 <div class="reason">
 
-<h3>🤝 Easy to Work With</h3>
+<h3>
+🤝 Easy to Work With
+</h3>
 
 <p>
 Clear communication, attention to instructions,
@@ -1728,7 +1788,9 @@ deadlines, and feedback matter to me.
 
 <div class="reason">
 
-<h3>📚 Always Learning</h3>
+<h3>
+📚 Always Learning
+</h3>
 
 <p>
 I continuously improve my design, marketing,
@@ -1743,10 +1805,9 @@ and digital skills.
 
 </section>
 
-
-<!-- =========================
+<!-- =====================================================
      PRICING
-========================= -->
+===================================================== -->
 
 <section id="pricing">
 
@@ -1769,17 +1830,21 @@ based on your business.
 
 </div>
 
-
 <div class="pricing-grid">
-
 
 <div class="price-card">
 
-<h3>Starter</h3>
+<h3>
+Starter
+</h3>
 
-<div class="price">$300</div>
+<div class="price">
+$300
+</div>
 
-<small>For small businesses</small>
+<small>
+For small businesses
+</small>
 
 <ul>
 <li>10 social media graphics</li>
@@ -1794,18 +1859,23 @@ Get Started
 
 </div>
 
-
 <div class="price-card featured">
 
 <div class="popular">
 MOST POPULAR
 </div>
 
-<h3>Growth</h3>
+<h3>
+Growth
+</h3>
 
-<div class="price">$500</div>
+<div class="price">
+$500
+</div>
 
-<small>For growing businesses</small>
+<small>
+For growing businesses
+</small>
 
 <ul>
 <li>20 social media graphics</li>
@@ -1821,14 +1891,19 @@ Choose Growth
 
 </div>
 
-
 <div class="price-card">
 
-<h3>Pro</h3>
+<h3>
+Pro
+</h3>
 
-<div class="price">$1000+</div>
+<div class="price">
+$1000+
+</div>
 
-<small>For ongoing support</small>
+<small>
+For ongoing support
+</small>
 
 <ul>
 <li>30 social media graphics</li>
@@ -1845,17 +1920,15 @@ Let's Talk
 
 </div>
 
-
 </div>
 
 </div>
 
 </section>
 
-
-<!-- =========================
+<!-- =====================================================
      ABOUT
-========================= -->
+===================================================== -->
 
 <section id="about" class="about">
 
@@ -1868,7 +1941,6 @@ src="images/snooky.jpg"
 alt="Snooky Delos Reyes">
 
 </div>
-
 
 <div class="about-text">
 
@@ -1900,14 +1972,37 @@ providing reliable support to every client I work with.
 
 <div class="skills">
 
-<span class="skill">Canva</span>
-<span class="skill">Graphic Design</span>
-<span class="skill">Product Marketing</span>
-<span class="skill">Social Media</span>
-<span class="skill">Content Creation</span>
-<span class="skill">E-commerce</span>
-<span class="skill">Google Workspace</span>
-<span class="skill">Basic Web Design</span>
+<span class="skill">
+Canva
+</span>
+
+<span class="skill">
+Graphic Design
+</span>
+
+<span class="skill">
+Product Marketing
+</span>
+
+<span class="skill">
+Social Media
+</span>
+
+<span class="skill">
+Content Creation
+</span>
+
+<span class="skill">
+E-commerce
+</span>
+
+<span class="skill">
+Google Workspace
+</span>
+
+<span class="skill">
+Basic Web Design
+</span>
 
 </div>
 
@@ -1917,10 +2012,9 @@ providing reliable support to every client I work with.
 
 </section>
 
-
-<!-- =========================
+<!-- =====================================================
      CTA
-========================= -->
+===================================================== -->
 
 <section id="contact" class="cta">
 
@@ -1947,16 +2041,14 @@ I'd love to help.
 <a
 href="mailto:dsnookyd@gmail.com"
 class="btn btn-primary">
-Email Me
-</a>
+Email Me </a>
 
 <a
 href="https://www.facebook.com/bysnooky"
 class="btn btn-outline"
 target="_blank"
 rel="noopener noreferrer">
-Message Me
-</a>
+Message Me </a>
 
 </div>
 
@@ -1966,10 +2058,9 @@ Message Me
 
 </section>
 
-
-<!-- =========================
+<!-- =====================================================
      FOOTER
-========================= -->
+===================================================== -->
 
 <footer>
 
@@ -1987,10 +2078,9 @@ Product Marketing • Graphic Design • E-commerce
 
 </footer>
 
-
-<!-- =========================
-     MENU + DROPDOWN SCRIPT
-========================= -->
+<!-- =====================================================
+     JAVASCRIPT
+===================================================== -->
 
 <script>
 
@@ -2001,189 +2091,245 @@ document.addEventListener("DOMContentLoaded", function () {
     const dropdown = document.querySelector(".dropdown");
     const dropdownToggle = document.querySelector(".dropdown-toggle");
 
-    if (!menuToggle || !navLinks) {
-        return;
-    }
 
+    /* =================================================
+       MOBILE MENU
+    ================================================= */
 
-    /* =========================
-       OPEN / CLOSE MAIN MENU
-    ========================= */
+    if (menuToggle && navLinks) {
 
-    menuToggle.addEventListener("click", function () {
-
-        const isOpen = navLinks.classList.toggle("open");
-
-        menuToggle.classList.toggle("active", isOpen);
-
-        menuToggle.setAttribute(
-            "aria-expanded",
-            isOpen ? "true" : "false"
-        );
-
-        menuToggle.setAttribute(
-            "aria-label",
-            isOpen ? "Close navigation" : "Open navigation"
-        );
-
-    });
-
-
-    /* =========================
-       PORTFOLIO DROPDOWN
-    ========================= */
-
-    if (dropdown && dropdownToggle) {
-
-        dropdownToggle.addEventListener("click", function (event) {
+        menuToggle.addEventListener("click", function (event) {
 
             event.stopPropagation();
 
-            const isOpen = dropdown.classList.toggle("open");
+            const isOpen =
+                navLinks.classList.toggle("open");
 
-            dropdownToggle.setAttribute(
+            menuToggle.classList.toggle(
+                "active",
+                isOpen
+            );
+
+            menuToggle.setAttribute(
                 "aria-expanded",
                 isOpen ? "true" : "false"
             );
 
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen
+                    ? "Close navigation"
+                    : "Open navigation"
+            );
+
         });
 
     }
 
 
-    /* =========================
-       CLOSE AFTER CLICKING LINK
-    ========================= */
+    /* =================================================
+       PORTFOLIO DROPDOWN
+    ================================================= */
 
-    navLinks.querySelectorAll("a").forEach(function (link) {
+    if (dropdown && dropdownToggle) {
 
-        link.addEventListener("click", function () {
+        dropdownToggle.addEventListener(
+            "click",
+            function (event) {
 
-            navLinks.classList.remove("open");
+                event.preventDefault();
+                event.stopPropagation();
 
-            menuToggle.classList.remove("active");
+                const isOpen =
+                    dropdown.classList.toggle("open");
 
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
+                dropdownToggle.setAttribute(
+                    "aria-expanded",
+                    isOpen ? "true" : "false"
+                );
 
-            menuToggle.setAttribute(
-                "aria-label",
-                "Open navigation"
-            );
+            }
+        );
+
+    }
 
 
-            if (dropdown) {
+    /* =================================================
+       NAVIGATION LINKS
+    ================================================= */
+
+    if (navLinks) {
+
+        navLinks.querySelectorAll("a").forEach(
+            function (link) {
+
+                link.addEventListener(
+                    "click",
+                    function () {
+
+                        navLinks.classList.remove(
+                            "open"
+                        );
+
+                        if (menuToggle) {
+
+                            menuToggle.classList.remove(
+                                "active"
+                            );
+
+                            menuToggle.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                            menuToggle.setAttribute(
+                                "aria-label",
+                                "Open navigation"
+                            );
+
+                        }
+
+
+                        if (dropdown) {
+
+                            dropdown.classList.remove(
+                                "open"
+                            );
+
+                        }
+
+
+                        if (dropdownToggle) {
+
+                            dropdownToggle.setAttribute(
+                                "aria-expanded",
+                                "false"
+                            );
+
+                        }
+
+                    }
+                );
+
+            }
+        );
+
+    }
+
+
+    /* =================================================
+       CLOSE DROPDOWN WHEN CLICKING OUTSIDE
+    ================================================= */
+
+    document.addEventListener(
+        "click",
+        function (event) {
+
+            if (
+                dropdown &&
+                !dropdown.contains(event.target)
+            ) {
 
                 dropdown.classList.remove("open");
+
+                if (dropdownToggle) {
+
+                    dropdownToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
 
             }
 
 
-            if (dropdownToggle) {
+            if (
+                navLinks &&
+                menuToggle &&
+                !navLinks.contains(event.target) &&
+                !menuToggle.contains(event.target)
+            ) {
 
-                dropdownToggle.setAttribute(
+                navLinks.classList.remove("open");
+
+                menuToggle.classList.remove(
+                    "active"
+                );
+
+                menuToggle.setAttribute(
                     "aria-expanded",
                     "false"
                 );
 
-            }
-
-        });
-
-    });
-
-
-    /* =========================
-       CLOSE WHEN CLICKING OUTSIDE
-    ========================= */
-
-    document.addEventListener("click", function (event) {
-
-        if (
-            !navLinks.contains(event.target) &&
-            !menuToggle.contains(event.target)
-        ) {
-
-            navLinks.classList.remove("open");
-
-            menuToggle.classList.remove("active");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            menuToggle.setAttribute(
-                "aria-label",
-                "Open navigation"
-            );
-
-
-            if (dropdown) {
-
-                dropdown.classList.remove("open");
-
-            }
-
-
-            if (dropdownToggle) {
-
-                dropdownToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
+                menuToggle.setAttribute(
+                    "aria-label",
+                    "Open navigation"
                 );
 
             }
 
         }
-
-    });
-
-
-    /* =========================
-       RESET WHEN RETURNING TO DESKTOP
-    ========================= */
-
-    window.addEventListener("resize", function () {
-
-        if (window.innerWidth > 850) {
-
-            navLinks.classList.remove("open");
-
-            menuToggle.classList.remove("active");
-
-            menuToggle.setAttribute(
-                "aria-expanded",
-                "false"
-            );
-
-            menuToggle.setAttribute(
-                "aria-label",
-                "Open navigation"
-            );
+    );
 
 
-            if (dropdown) {
+    /* =================================================
+       RESET MOBILE MENU WHEN RESIZING
+    ================================================= */
 
-                dropdown.classList.remove("open");
+    window.addEventListener(
+        "resize",
+        function () {
 
-            }
+            if (window.innerWidth > 850) {
 
+                if (navLinks) {
 
-            if (dropdownToggle) {
+                    navLinks.classList.remove(
+                        "open"
+                    );
 
-                dropdownToggle.setAttribute(
-                    "aria-expanded",
-                    "false"
-                );
+                }
+
+                if (menuToggle) {
+
+                    menuToggle.classList.remove(
+                        "active"
+                    );
+
+                    menuToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                    menuToggle.setAttribute(
+                        "aria-label",
+                        "Open navigation"
+                    );
+
+                }
+
+                if (dropdown) {
+
+                    dropdown.classList.remove(
+                        "open"
+                    );
+
+                }
+
+                if (dropdownToggle) {
+
+                    dropdownToggle.setAttribute(
+                        "aria-expanded",
+                        "false"
+                    );
+
+                }
 
             }
 
         }
-
-    });
+    );
 
 });
 
