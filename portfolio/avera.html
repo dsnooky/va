@@ -16,10 +16,6 @@ content="AVÉRA New Collection Campaign — fashion product marketing and graphi
 
 <style>
 
-/* =========================================================
-   VARIABLES
-========================================================= */
-
 :root {
     --dark: #171717;
     --text: #4d4a46;
@@ -36,14 +32,9 @@ content="AVÉRA New Collection Campaign — fashion product marketing and graphi
 
     --shadow: 0 20px 60px rgba(50,40,30,.09);
 
-    --serif: "Playfair Display", Georgia, serif;
-    --sans: "DM Sans", Arial, sans-serif;
+    --serif: "Playfair Display", serif;
+    --sans: "DM Sans", sans-serif;
 }
-
-
-/* =========================================================
-   RESET
-========================================================= */
 
 * {
     margin: 0;
@@ -53,7 +44,6 @@ content="AVÉRA New Collection Campaign — fashion product marketing and graphi
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px;
 }
 
 body {
@@ -61,14 +51,11 @@ body {
     color: var(--dark);
     font-family: var(--sans);
     line-height: 1.7;
-    overflow-x: hidden;
 }
 
 img {
-    display: block;
     width: 100%;
-    max-width: 100%;
-    height: auto;
+    display: block;
 }
 
 a {
@@ -76,57 +63,20 @@ a {
     text-decoration: none;
 }
 
-button {
-    font-family: inherit;
-}
-
 .container {
     width: min(1120px, 92%);
-    margin: 0 auto;
+    margin: auto;
 }
 
-
-/* =========================================================
-   IMAGE SYSTEM
-   Automatically preserves the original image ratio.
-========================================================= */
-
-.image-frame {
-    width: 100%;
-    overflow: hidden;
-    background: var(--sand);
-}
-
-.image-frame img {
-    width: 100%;
-    height: auto;
-    aspect-ratio: auto;
-    object-fit: contain;
-}
-
-
-/* Broken image fallback */
-
-.image-frame img.is-missing {
-    min-height: 220px;
-    object-fit: contain;
-    padding: 30px;
-    background: var(--sand);
-}
-
-
-/* =========================================================
-   NAVIGATION
-========================================================= */
+/* NAVIGATION */
 
 .navbar {
     position: sticky;
     top: 0;
     z-index: 1000;
 
-    background: rgba(250,247,242,.96);
+    background: rgba(250,247,242,.95);
     backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
 
     border-bottom: 1px solid var(--border);
 }
@@ -137,15 +87,12 @@ button {
     display: flex;
     align-items: center;
     justify-content: space-between;
-
-    position: relative;
 }
 
 .logo {
     font-family: var(--serif);
     font-size: 23px;
     letter-spacing: 3px;
-    font-weight: 700;
 }
 
 .logo span {
@@ -162,48 +109,16 @@ button {
 }
 
 .nav-links a {
-    transition: .3s ease;
+    transition: .3s;
 }
 
 .nav-links a:hover {
     color: var(--brown);
 }
 
-
-/* Mobile menu button */
-
-.menu-toggle {
-    display: none;
-
-    align-items: center;
-    justify-content: center;
-
-    width: 42px;
-    height: 42px;
-
-    border: 1px solid var(--dark);
-    border-radius: 50%;
-
-    background: transparent;
-    color: var(--dark);
-
-    font-size: 20px;
-    cursor: pointer;
-
-    transition: .3s ease;
-}
-
-.menu-toggle:hover {
-    background: var(--dark);
-    color: white;
-}
-
-
 .back-btn {
     border: 1px solid var(--dark);
-
     padding: 9px 17px;
-
     border-radius: 30px;
 }
 
@@ -212,10 +127,7 @@ button {
     color: white !important;
 }
 
-
-/* =========================================================
-   HERO
-========================================================= */
+/* HERO */
 
 .hero {
     padding: 100px 0 75px;
@@ -223,11 +135,8 @@ button {
 
 .hero-grid {
     display: grid;
-
     grid-template-columns: .9fr 1.1fr;
-
     gap: 70px;
-
     align-items: center;
 }
 
@@ -243,7 +152,6 @@ button {
 
     font-size: 11px;
     font-weight: 700;
-
     letter-spacing: 1px;
     text-transform: uppercase;
 }
@@ -252,9 +160,7 @@ button {
     margin-top: 22px;
 
     font-family: var(--serif);
-
     font-size: clamp(55px, 8vw, 92px);
-
     line-height: 1;
 
     letter-spacing: 2px;
@@ -268,35 +174,30 @@ button {
     margin-top: 20px;
 
     font-family: var(--serif);
-
     font-size: 27px;
-
     color: var(--text);
 }
 
 .hero-description {
-    max-width: 550px;
-
     margin-top: 20px;
+
+    max-width: 550px;
 
     color: var(--muted);
 }
 
 .buttons {
     display: flex;
-    flex-wrap: wrap;
     gap: 12px;
+    flex-wrap: wrap;
 
     margin-top: 30px;
 }
 
 .btn {
     display: inline-flex;
-
     align-items: center;
     justify-content: center;
-
-    min-height: 46px;
 
     padding: 13px 23px;
 
@@ -305,7 +206,7 @@ button {
     font-size: 14px;
     font-weight: 700;
 
-    transition: .3s ease;
+    transition: .3s;
 }
 
 .btn-primary {
@@ -328,8 +229,7 @@ button {
     color: var(--brown);
 }
 
-
-/* Hero image */
+/* HERO IMAGE */
 
 .hero-image {
     position: relative;
@@ -355,14 +255,10 @@ button {
 
 .hero-image img {
     border-radius: 4px;
-
     box-shadow: var(--shadow);
 }
 
-
-/* =========================================================
-   PROJECT INFO
-========================================================= */
+/* INFO */
 
 .project-info {
     padding: 20px 0 90px;
@@ -370,9 +266,7 @@ button {
 
 .info-grid {
     display: grid;
-
-    grid-template-columns: repeat(3, 1fr);
-
+    grid-template-columns: repeat(3,1fr);
     gap: 18px;
 }
 
@@ -382,7 +276,6 @@ button {
     padding: 28px;
 
     border: 1px solid var(--border);
-
     border-radius: 16px;
 
     box-shadow: 0 10px 30px rgba(40,30,20,.04);
@@ -402,14 +295,10 @@ button {
 
 .info-card strong {
     display: block;
-
     margin-top: 6px;
 }
 
-
-/* =========================================================
-   GENERAL SECTIONS
-========================================================= */
+/* GENERAL SECTIONS */
 
 section {
     padding: 90px 0;
@@ -426,7 +315,6 @@ section {
 
 .section-heading {
     max-width: 700px;
-
     margin-bottom: 45px;
 }
 
@@ -434,22 +322,16 @@ section {
     margin-top: 8px;
 
     font-family: var(--serif);
-
-    font-size: clamp(35px, 5vw, 54px);
-
+    font-size: clamp(35px,5vw,54px);
     line-height: 1.15;
 }
 
 .section-heading p {
     margin-top: 15px;
-
     color: var(--muted);
 }
 
-
-/* =========================================================
-   BRAND
-========================================================= */
+/* BRAND */
 
 .brand {
     background: white;
@@ -457,17 +339,14 @@ section {
 
 .brand-grid {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
 
     gap: 70px;
-
     align-items: center;
 }
 
 .brand-text p {
     color: var(--text);
-
     margin-bottom: 18px;
 }
 
@@ -481,7 +360,6 @@ section {
     background: var(--sand);
 
     font-family: var(--serif);
-
     font-size: 21px;
 }
 
@@ -489,20 +367,18 @@ section {
     padding: 70px 30px;
 
     background:
-        linear-gradient(
-            145deg,
-            #eee5db,
-            #ded0c0
-        );
+    linear-gradient(
+        145deg,
+        #eee5db,
+        #ded0c0
+    );
 
     text-align: center;
 }
 
 .brand-box h3 {
     font-family: var(--serif);
-
     font-size: 48px;
-
     letter-spacing: 4px;
 }
 
@@ -512,28 +388,20 @@ section {
     color: var(--brown);
 
     font-size: 11px;
-
     letter-spacing: 2px;
-
     text-transform: uppercase;
 }
 
-
-/* =========================================================
-   MARKETING GOAL
-========================================================= */
+/* GOAL */
 
 .goal-grid {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
-
     gap: 70px;
 }
 
 .goal-list {
     display: grid;
-
     gap: 15px;
 }
 
@@ -543,7 +411,6 @@ section {
     background: white;
 
     border: 1px solid var(--border);
-
     border-radius: 14px;
 }
 
@@ -553,7 +420,6 @@ section {
 
 .goal-item span {
     color: var(--muted);
-
     font-size: 14px;
 }
 
@@ -561,7 +427,6 @@ section {
     padding: 38px;
 
     background: var(--dark);
-
     color: white;
 
     border-radius: 4px;
@@ -569,26 +434,20 @@ section {
 
 .strategy h3 {
     font-family: var(--serif);
-
     font-size: 33px;
 }
 
 .strategy ul {
     margin-top: 20px;
-
     padding-left: 20px;
 }
 
 .strategy li {
     margin: 9px 0;
-
     color: #d8d3ce;
 }
 
-
-/* =========================================================
-   CAMPAIGN
-========================================================= */
+/* CAMPAIGN */
 
 .campaign {
     background: var(--sand);
@@ -596,41 +455,20 @@ section {
 
 .campaign-grid {
     display: grid;
-
-    grid-template-columns: repeat(2, 1fr);
-
+    grid-template-columns: repeat(2,1fr);
     gap: 25px;
 }
 
 .campaign-card {
     background: white;
-
     padding: 12px;
 
     box-shadow: var(--shadow);
-
-    transition: transform .3s ease;
 }
-
-.campaign-card:hover {
-    transform: translateY(-4px);
-}
-
-
-/*
-   IMPORTANT:
-   Do NOT use aspect-ratio: 1/1 here.
-   That was causing the original images to be cropped.
-*/
 
 .campaign-card img {
-    width: 100%;
-
-    height: auto;
-
-    aspect-ratio: auto;
-
-    object-fit: contain;
+    aspect-ratio: 1/1;
+    object-fit: cover;
 }
 
 .campaign-content {
@@ -638,16 +476,12 @@ section {
 }
 
 .campaign-content span {
-    display: block;
-
     color: var(--brown);
 
     font-size: 11px;
-
     font-weight: 700;
 
     letter-spacing: 1px;
-
     text-transform: uppercase;
 }
 
@@ -655,40 +489,29 @@ section {
     margin-top: 5px;
 
     font-family: var(--serif);
-
     font-size: 26px;
-
-    line-height: 1.3;
 }
 
 .campaign-content p {
     margin-top: 6px;
 
     color: var(--muted);
-
     font-size: 14px;
 }
 
-
-/* =========================================================
-   VISUAL DIRECTION
-========================================================= */
+/* VISUAL STYLE */
 
 .visual-grid {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
 
     gap: 70px;
-
     align-items: center;
 }
 
 .palette {
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 10px;
 
     margin-top: 25px;
@@ -702,7 +525,6 @@ section {
     border-radius: 30px;
 
     font-size: 13px;
-
     font-weight: 600;
 }
 
@@ -714,20 +536,15 @@ section {
 
 .principle h3 {
     font-family: var(--serif);
-
     font-size: 32px;
 }
 
 .principle p {
     margin-top: 12px;
-
     color: var(--text);
 }
 
-
-/* =========================================================
-   MY ROLE
-========================================================= */
+/* ROLE */
 
 .role {
     background: white;
@@ -735,19 +552,15 @@ section {
 
 .role-grid {
     display: grid;
-
     grid-template-columns: 1fr 1fr;
 
     gap: 70px;
-
     align-items: center;
 }
 
 .role-tags {
     display: flex;
-
     flex-wrap: wrap;
-
     gap: 10px;
 
     margin-top: 25px;
@@ -759,11 +572,9 @@ section {
     border-radius: 30px;
 
     background: var(--sand);
-
     color: var(--brown);
 
     font-size: 13px;
-
     font-weight: 600;
 }
 
@@ -777,26 +588,20 @@ section {
 
 .result h3 {
     font-family: var(--serif);
-
     font-size: 32px;
 }
 
 .result p {
     margin-top: 12px;
-
     color: var(--text);
 }
 
-
-/* =========================================================
-   CTA
-========================================================= */
+/* CTA */
 
 .cta {
     padding: 100px 0;
 
     background: var(--dark);
-
     color: white;
 
     text-align: center;
@@ -804,10 +609,7 @@ section {
 
 .cta h2 {
     font-family: var(--serif);
-
-    font-size: clamp(40px, 6vw, 64px);
-
-    line-height: 1.15;
+    font-size: clamp(40px,6vw,64px);
 }
 
 .cta p {
@@ -820,20 +622,15 @@ section {
 
 .cta .btn {
     background: white;
-
     color: var(--dark);
 }
 
 .cta .btn:hover {
     background: var(--brown);
-
     color: white;
 }
 
-
-/* =========================================================
-   FOOTER
-========================================================= */
+/* FOOTER */
 
 footer {
     padding: 25px;
@@ -849,299 +646,58 @@ footer {
     font-size: 13px;
 }
 
+/* RESPONSIVE */
 
-/* =========================================================
-   TABLET
-========================================================= */
+@media(max-width:850px) {
 
-@media (max-width: 850px) {
-
-    .nav-inner {
-        min-height: 64px;
-    }
-
-    /* Show hamburger */
-
-    .menu-toggle {
-        display: inline-flex;
-    }
-
-    /* Hide desktop nav */
-
-    .nav-links {
+    .nav-links a:not(.back-btn) {
         display: none;
-
-        position: absolute;
-
-        top: 64px;
-
-        left: 0;
-        right: 0;
-
-        padding: 14px;
-
-        background: rgba(250,247,242,.98);
-
-        border: 1px solid var(--border);
-
-        border-top: 0;
-
-        border-radius: 0 0 16px 16px;
-
-        box-shadow: var(--shadow);
-
-        flex-direction: column;
-
-        align-items: stretch;
-
-        gap: 4px;
     }
-
-    .nav-links.open {
-        display: flex;
-    }
-
-    .nav-links a {
-        padding: 12px 10px;
-
-        border-radius: 10px;
-    }
-
-    .nav-links a:hover {
-        background: var(--sand);
-    }
-
-    .back-btn {
-        text-align: center;
-
-        margin-top: 4px;
-    }
-
-
-    /* Hero */
 
     .hero {
-        padding: 60px 0 45px;
+        padding: 70px 0 50px;
     }
 
-    .hero-grid {
-        grid-template-columns: 1fr;
-
-        gap: 45px;
-    }
-
-
-    /* Other grids */
-
+    .hero-grid,
     .brand-grid,
     .goal-grid,
     .visual-grid,
     .role-grid {
         grid-template-columns: 1fr;
-
-        gap: 35px;
+        gap: 40px;
     }
-
 
     .info-grid {
         grid-template-columns: 1fr;
     }
 
-
     .campaign-grid {
         grid-template-columns: 1fr;
     }
 
-
     section {
-        padding: 60px 0;
-    }
-
-
-    .project-info {
-        padding: 10px 0 60px;
+        padding: 70px 0;
     }
 }
 
-
-/* =========================================================
-   MOBILE
-========================================================= */
-
-@media (max-width: 500px) {
-
-    .container {
-        width: calc(100% - 28px);
-    }
-
-
-    /* Navigation */
-
-    .logo {
-        font-size: 20px;
-
-        letter-spacing: 2px;
-    }
-
-
-    /* Hero */
-
-    .hero {
-        padding: 45px 0 35px;
-    }
+@media(max-width:500px) {
 
     .hero h1 {
-        font-size: clamp(44px, 16vw, 58px);
-
-        overflow-wrap: anywhere;
+        font-size: 52px;
     }
 
     .subtitle {
-        font-size: 21px;
-    }
-
-    .hero-description {
-        font-size: 15px;
-    }
-
-
-    /* Buttons */
-
-    .buttons {
-        flex-direction: column;
-    }
-
-    .buttons .btn {
-        width: 100%;
-    }
-
-
-    /* Hero decorative circle */
-
-    .hero-image::before {
-        width: 110px;
-        height: 110px;
-
-        top: -20px;
-        right: -15px;
-    }
-
-
-    /* Cards */
-
-    .info-card {
-        padding: 22px;
-    }
-
-    .goal-item {
-        padding: 18px;
-    }
-
-
-    /* Brand */
-
-    .brand-box {
-        padding: 50px 20px;
+        font-size: 22px;
     }
 
     .brand-box h3 {
         font-size: 34px;
     }
 
-
-    /* Strategy */
-
     .strategy,
     .principle,
     .result {
         padding: 25px;
-    }
-
-
-    /* Campaign */
-
-    .campaign-card {
-        padding: 8px;
-    }
-
-    .campaign-content {
-        padding: 18px 10px 10px;
-    }
-
-    .campaign-content h3 {
-        font-size: 23px;
-    }
-
-    .campaign-content p {
-        font-size: 14px;
-    }
-
-
-    /* Missing images */
-
-    .image-frame img.is-missing {
-        min-height: 180px;
-    }
-
-
-    /* Sections */
-
-    section {
-        padding: 50px 0;
-    }
-
-    .section-heading {
-        margin-bottom: 32px;
-    }
-
-
-    /* CTA */
-
-    .cta {
-        padding: 70px 0;
-    }
-
-    .cta h2 {
-        font-size: 40px;
-    }
-
-
-    footer {
-        padding: 22px 14px;
-
-        font-size: 12px;
-    }
-}
-
-
-/* =========================================================
-   VERY SMALL PHONES
-========================================================= */
-
-@media (max-width: 360px) {
-
-    .container {
-        width: calc(100% - 22px);
-    }
-
-    .hero h1 {
-        font-size: 42px;
-    }
-
-    .subtitle {
-        font-size: 19px;
-    }
-
-    .section-heading h2 {
-        font-size: 32px;
-    }
-
-    .campaign-content h3 {
-        font-size: 21px;
-    }
-
-    .cta h2 {
-        font-size: 34px;
     }
 }
 
@@ -1151,967 +707,646 @@ footer {
 
 <body>
 
-
-<!-- =====================================================
-     NAVIGATION
-===================================================== -->
+<!-- NAVIGATION -->
 
 <header class="navbar">
 
-    <div class="container nav-inner">
+<div class="container nav-inner">
 
-        <a href="../index.html" class="logo">
-            SN<span>OOKY</span>
-        </a>
+<a href="../index.html" class="logo">
+    SN<span>OOKY</span>
+</a>
 
+<nav class="nav-links">
 
-        <button
-            class="menu-toggle"
-            type="button"
-            aria-label="Open menu"
-            aria-expanded="false"
-            onclick="toggleMenu()">
-            ☰
-        </button>
+<a href="../index.html#services">Services</a>
+<a href="../index.html#portfolio">Portfolio</a>
+<a href="../index.html#contact">Contact</a>
 
+<a href="../index.html" class="back-btn">
+    ← Back to Portfolio
+</a>
 
-        <nav class="nav-links" id="siteNav">
+</nav>
 
-            <a href="../index.html#services">
-                Services
-            </a>
-
-            <a href="../index.html#portfolio">
-                Portfolio
-            </a>
-
-            <a href="../index.html#contact">
-                Contact
-            </a>
-
-            <a href="../index.html" class="back-btn">
-                ← Back to Portfolio
-            </a>
-
-        </nav>
-
-    </div>
+</div>
 
 </header>
 
 
-<!-- =====================================================
-     MAIN
-===================================================== -->
-
 <main>
 
-
-<!-- =====================================================
-     HERO
-===================================================== -->
+<!-- HERO -->
 
 <section class="hero">
 
-    <div class="container hero-grid">
+<div class="container hero-grid">
+
+<div>
+
+<span class="eyebrow">
+    Concept Project
+</span>
+
+<h1>
+    AVÉRA
+</h1>
+
+<div class="subtitle">
+    New Collection Campaign
+</div>
+
+<p class="hero-description">
+    A fictional fashion campaign created to demonstrate
+    product marketing, promotional graphic design,
+    social media content, and visual campaign direction.
+</p>
+
+<div class="buttons">
+
+<a href="#campaign" class="btn btn-primary">
+    View Campaign
+</a>
+
+<a href="../index.html#contact" class="btn btn-outline">
+    Work With Me
+</a>
+
+</div>
+
+</div>
 
 
-        <div>
+<div class="hero-image">
 
-            <span class="eyebrow">
-                Concept Project
-            </span>
+<img
+src="../images/avera/avera-campaign.jpg"
+alt="AVÉRA New Collection Fashion Campaign">
 
+</div>
 
-            <h1>
-                AVÉRA
-            </h1>
-
-
-            <div class="subtitle">
-                New Collection Campaign
-            </div>
-
-
-            <p class="hero-description">
-                A fictional fashion campaign created to demonstrate
-                product marketing, promotional graphic design,
-                social media content, and visual campaign direction.
-            </p>
-
-
-            <div class="buttons">
-
-                <a href="#campaign" class="btn btn-primary">
-                    View Campaign
-                </a>
-
-                <a href="../index.html#contact" class="btn btn-outline">
-                    Work With Me
-                </a>
-
-            </div>
-
-        </div>
-
-
-        <div class="hero-image">
-
-            <div class="image-frame">
-
-                <img
-                    src="images/2b5d8ae2-324d-4231-83b3-77f33fc80dc5.png"
-                    alt="AVÉRA New Collection Fashion Campaign"
-                    loading="eager">
-
-            </div>
-
-        </div>
-
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =====================================================
-     PROJECT INFORMATION
-===================================================== -->
+<!-- PROJECT INFO -->
 
 <section class="project-info">
 
-    <div class="container">
+<div class="container">
 
-        <div class="info-grid">
+<div class="info-grid">
 
+<div class="info-card">
+<small>Industry</small>
+<strong>Fashion & Apparel</strong>
+</div>
 
-            <div class="info-card">
+<div class="info-card">
+<small>Campaign</small>
+<strong>The Linen Edit</strong>
+</div>
 
-                <small>
-                    Industry
-                </small>
+<div class="info-card">
+<small>Project Type</small>
+<strong>Portfolio Concept</strong>
+</div>
 
-                <strong>
-                    Fashion & Apparel
-                </strong>
+</div>
 
-            </div>
-
-
-            <div class="info-card">
-
-                <small>
-                    Campaign
-                </small>
-
-                <strong>
-                    The Linen Edit
-                </strong>
-
-            </div>
-
-
-            <div class="info-card">
-
-                <small>
-                    Project Type
-                </small>
-
-                <strong>
-                    Portfolio Concept
-                </strong>
-
-            </div>
-
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =====================================================
-     BRAND
-===================================================== -->
+<!-- BRAND -->
 
 <section class="brand">
 
-    <div class="container">
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-number">
+01 — THE BRAND
+</span>
+
+<h2>
+Modern fashion made for
+everyday confidence.
+</h2>
+
+</div>
 
 
-        <div class="section-heading">
+<div class="brand-grid">
 
-            <span class="section-number">
-                01 — THE BRAND
-            </span>
+<div class="brand-text">
 
-            <h2>
-                Modern fashion made for
-                everyday confidence.
-            </h2>
+<p>
+AVÉRA is a fictional contemporary fashion brand
+created around effortless, neutral-toned clothing
+for modern women.
+</p>
 
-        </div>
+<p>
+The campaign combines editorial photography,
+minimal typography, neutral colors, and lifestyle
+storytelling to create a sophisticated but approachable
+fashion identity.
+</p>
 
+<div class="quote">
+“Modern style. Everyday you.”
+</div>
 
-        <div class="brand-grid">
-
-
-            <div class="brand-text">
-
-                <p>
-                    AVÉRA is a fictional contemporary fashion brand
-                    created around effortless, neutral-toned clothing
-                    for modern women.
-                </p>
+</div>
 
 
-                <p>
-                    The campaign combines editorial photography,
-                    minimal typography, neutral colors, and lifestyle
-                    storytelling to create a sophisticated but approachable
-                    fashion identity.
-                </p>
+<div class="brand-box">
 
+<h3>
+AVÉRA
+</h3>
 
-                <div class="quote">
-                    “Modern style. Everyday you.”
-                </div>
+<p>
+Modern Style · Everyday You
+</p>
 
-            </div>
+</div>
 
+</div>
 
-            <div class="brand-box">
-
-                <h3>
-                    AVÉRA
-                </h3>
-
-                <p>
-                    Modern Style · Everyday You
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =====================================================
-     MARKETING GOAL
-===================================================== -->
+<!-- MARKETING GOAL -->
 
 <section>
 
-    <div class="container">
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-number">
+02 — MARKETING GOAL
+</span>
+
+<h2>
+Make a new collection feel
+desirable and easy to wear.
+</h2>
+
+</div>
 
 
-        <div class="section-heading">
+<div class="goal-grid">
 
-            <span class="section-number">
-                02 — MARKETING GOAL
-            </span>
+<div class="goal-list">
 
-            <h2>
-                Make a new collection feel
-                desirable and easy to wear.
-            </h2>
+<div class="goal-item">
 
-        </div>
+<strong>
+Introduce the New Collection
+</strong>
 
+<span>
+Create awareness around the new linen-focused
+fashion collection.
+</span>
 
-        <div class="goal-grid">
-
-
-            <div class="goal-list">
+</div>
 
 
-                <div class="goal-item">
+<div class="goal-item">
 
-                    <strong>
-                        Introduce the New Collection
-                    </strong>
+<strong>
+Highlight Product Features
+</strong>
 
-                    <span>
-                        Create awareness around the new linen-focused
-                        fashion collection.
-                    </span>
+<span>
+Communicate comfort, breathability, versatility,
+and everyday usability.
+</span>
 
-                </div>
-
-
-                <div class="goal-item">
-
-                    <strong>
-                        Highlight Product Features
-                    </strong>
-
-                    <span>
-                        Communicate comfort, breathability, versatility,
-                        and everyday usability.
-                    </span>
-
-                </div>
+</div>
 
 
-                <div class="goal-item">
+<div class="goal-item">
 
-                    <strong>
-                        Create Lifestyle Desire
-                    </strong>
+<strong>
+Create Lifestyle Desire
+</strong>
 
-                    <span>
-                        Show customers how the clothing fits naturally
-                        into their everyday lifestyle.
-                    </span>
+<span>
+Show customers how the clothing fits naturally
+into their everyday lifestyle.
+</span>
 
-                </div>
-
-
-                <div class="goal-item">
-
-                    <strong>
-                        Drive Promotional Interest
-                    </strong>
-
-                    <span>
-                        Use a limited-time discount to encourage customers
-                        to explore the collection.
-                    </span>
-
-                </div>
+</div>
 
 
-            </div>
+<div class="goal-item">
+
+<strong>
+Drive Promotional Interest
+</strong>
+
+<span>
+Use a limited-time discount to encourage customers
+to explore the collection.
+</span>
+
+</div>
+
+</div>
 
 
-            <div class="strategy">
+<div class="strategy">
 
-                <h3>
-                    Content Strategy
-                </h3>
+<h3>
+Content Strategy
+</h3>
 
+<ul>
 
-                <ul>
+<li>New collection announcement</li>
+<li>Product feature content</li>
+<li>Lifestyle photography</li>
+<li>Promotional graphics</li>
+<li>Collection showcase</li>
+<li>Social media storytelling</li>
 
-                    <li>
-                        New collection announcement
-                    </li>
+</ul>
 
-                    <li>
-                        Product feature content
-                    </li>
+</div>
 
-                    <li>
-                        Lifestyle photography
-                    </li>
+</div>
 
-                    <li>
-                        Promotional graphics
-                    </li>
-
-                    <li>
-                        Collection showcase
-                    </li>
-
-                    <li>
-                        Social media storytelling
-                    </li>
-
-                </ul>
-
-            </div>
-
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =====================================================
-     CAMPAIGN
-     
-     IMPORTANT:
-     GitHub Pages is case-sensitive.
-
-     These filenames must exactly match the files
-     inside your images folder.
-===================================================== -->
+<!-- CAMPAIGN -->
 
 <section class="campaign" id="campaign">
 
-    <div class="container">
+<div class="container">
 
+<div class="section-heading">
 
-        <div class="section-heading">
+<span class="section-number">
+03 — CAMPAIGN DESIGNS
+</span>
 
-            <span class="section-number">
-                03 — CAMPAIGN DESIGNS
-            </span>
+<h2>
+The Linen Edit.
+Five coordinated visuals.
+</h2>
 
-            <h2>
-                The Linen Edit.
-                Five coordinated visuals.
-            </h2>
+<p>
+Each visual has a specific marketing purpose while
+maintaining one consistent fashion identity.
+</p>
 
-            <p>
-                Each visual has a specific marketing purpose while
-                maintaining one consistent fashion identity.
-            </p>
+</div>
 
-        </div>
 
+<div class="campaign-grid">
 
-        <div class="campaign-grid">
 
+<!-- 01 -->
 
-            <!-- =================================================
-                 CAMPAIGN 01
-            ================================================== -->
+<article class="campaign-card">
 
-            <article class="campaign-card">
+<img
+src="../images/avera/new-arrival.jpg"
+alt="AVÉRA New Arrival">
 
-                <div class="image-frame">
+<div class="campaign-content">
 
-                    <img
-                        src="images/avera%201.JPG"
-                        alt="AVÉRA New Arrival"
-                        loading="lazy">
+<span>
+01 — New Arrival
+</span>
 
-                </div>
+<h3>
+The Linen Edit
+</h3>
 
+<p>
+A collection-launch graphic designed to introduce
+the new season and immediately showcase the product.
+</p>
 
-                <div class="campaign-content">
+</div>
 
-                    <span>
-                        01 — New Arrival
-                    </span>
+</article>
 
-                    <h3>
-                        The Linen Edit
-                    </h3>
 
-                    <p>
-                        A collection-launch graphic designed to introduce
-                        the new season and immediately showcase the product.
-                    </p>
+<!-- 02 -->
 
-                </div>
+<article class="campaign-card">
 
-            </article>
+<img
+src="../images/avera/product-feature.jpg"
+alt="AVÉRA Product Feature">
 
+<div class="campaign-content">
 
-            <!-- =================================================
-                 CAMPAIGN 02
-            ================================================== -->
+<span>
+02 — Product Feature
+</span>
 
-            <article class="campaign-card">
+<h3>
+Lightweight. Breathable. Everyday Ready.
+</h3>
 
-                <div class="image-frame">
+<p>
+A feature graphic that communicates the key
+selling points of the collection.
+</p>
 
-                    <img
-                        src="images/avera%202.JPG"
-                        alt="AVÉRA Product Feature"
-                        loading="lazy">
+</div>
 
-                </div>
+</article>
 
 
-                <div class="campaign-content">
+<!-- 03 -->
 
-                    <span>
-                        02 — Product Feature
-                    </span>
+<article class="campaign-card">
 
-                    <h3>
-                        Lightweight. Breathable. Everyday Ready.
-                    </h3>
+<img
+src="../images/avera/lifestyle.jpg"
+alt="AVÉRA Lifestyle Fashion Advertisement">
 
-                    <p>
-                        A feature graphic that communicates the key
-                        selling points of the collection.
-                    </p>
+<div class="campaign-content">
 
-                </div>
+<span>
+03 — Lifestyle Ad
+</span>
 
-            </article>
+<h3>
+Made for Slow Mornings & Busy Days
+</h3>
 
+<p>
+Lifestyle storytelling connects the product with
+the customer's everyday routine.
+</p>
 
-            <!-- =================================================
-                 CAMPAIGN 03
-            ================================================== -->
+</div>
 
-            <article class="campaign-card">
+</article>
 
-                <div class="image-frame">
 
-                    <img
-                        src="images/avera%203.JPG"
-                        alt="AVÉRA Lifestyle Fashion Advertisement"
-                        loading="lazy">
+<!-- 04 -->
 
-                </div>
+<article class="campaign-card">
 
+<img
+src="../images/avera/sale.jpg"
+alt="AVÉRA Fashion Sale Graphic">
 
-                <div class="campaign-content">
+<div class="campaign-content">
 
-                    <span>
-                        03 — Lifestyle Ad
-                    </span>
+<span>
+04 — Sale Graphic
+</span>
 
-                    <h3>
-                        Made for Slow Mornings & Busy Days
-                    </h3>
+<h3>
+15% OFF New Season
+</h3>
 
-                    <p>
-                        Lifestyle storytelling connects the product
-                        with the customer's everyday routine.
-                    </p>
+<p>
+A promotional design created to add urgency and
+encourage customers to shop the new collection.
+</p>
 
-                </div>
+</div>
 
-            </article>
+</article>
 
 
-            <!-- =================================================
-                 CAMPAIGN 04
-            ================================================== -->
+<!-- 05 -->
 
-            <article class="campaign-card">
+<article class="campaign-card">
 
-                <div class="image-frame">
+<img
+src="../images/avera/collection.jpg"
+alt="AVÉRA Collection Social Media Post">
 
-                    <img
-                        src="images/avera%204.JPG"
-                        alt="AVÉRA Fashion Sale Graphic"
-                        loading="lazy">
+<div class="campaign-content">
 
-                </div>
+<span>
+05 — Collection Post
+</span>
 
+<h3>
+Your New Everyday Uniform
+</h3>
 
-                <div class="campaign-content">
+<p>
+A social-ready collection visual designed to
+show multiple products together.
+</p>
 
-                    <span>
-                        04 — Sale Graphic
-                    </span>
+</div>
 
-                    <h3>
-                        15% OFF New Season
-                    </h3>
+</article>
 
-                    <p>
-                        A promotional design created to add urgency
-                        and encourage customers to shop the new collection.
-                    </p>
 
-                </div>
+</div>
 
-            </article>
-
-
-            <!-- =================================================
-                 CAMPAIGN 05
-            ================================================== -->
-
-            <article class="campaign-card">
-
-                <div class="image-frame">
-
-                    <img
-                        src="images/avera%205.JPG"
-                        alt="AVÉRA Collection Social Media Post"
-                        loading="lazy">
-
-                </div>
-
-
-                <div class="campaign-content">
-
-                    <span>
-                        05 — Collection Post
-                    </span>
-
-                    <h3>
-                        Your New Everyday Uniform
-                    </h3>
-
-                    <p>
-                        A social-ready collection visual designed to
-                        show multiple products together.
-                    </p>
-
-                </div>
-
-            </article>
-
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =====================================================
-     VISUAL DIRECTION
-===================================================== -->
+<!-- VISUAL DIRECTION -->
 
 <section>
 
-    <div class="container">
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-number">
+04 — VISUAL DIRECTION
+</span>
+
+<h2>
+Minimal fashion.
+Editorial presentation.
+</h2>
+
+</div>
 
 
-        <div class="section-heading">
+<div class="visual-grid">
 
-            <span class="section-number">
-                04 — VISUAL DIRECTION
-            </span>
+<div>
 
-            <h2>
-                Minimal fashion.
-                Editorial presentation.
-            </h2>
+<p>
+The AVÉRA campaign uses neutral colors and
+editorial-inspired layouts to create a modern
+fashion identity.
+</p>
 
-        </div>
+<div class="palette">
 
+<span>Ivory</span>
+<span>Beige</span>
+<span>Sand</span>
+<span>Warm Brown</span>
+<span>Black</span>
+<span>Minimal</span>
 
-        <div class="visual-grid">
+</div>
 
-
-            <div>
-
-                <p>
-                    The AVÉRA campaign uses neutral colors and
-                    editorial-inspired layouts to create a modern
-                    fashion identity.
-                </p>
+</div>
 
 
-                <div class="palette">
+<div class="principle">
 
-                    <span>
-                        Ivory
-                    </span>
+<h3>
+Design Principle
+</h3>
 
-                    <span>
-                        Beige
-                    </span>
+<p>
+Let the clothing speak first. Use clean typography,
+negative space, strong photography, and short
+marketing messages to keep the campaign premium
+and easy to understand.
+</p>
 
-                    <span>
-                        Sand
-                    </span>
+</div>
 
-                    <span>
-                        Warm Brown
-                    </span>
+</div>
 
-                    <span>
-                        Black
-                    </span>
-
-                    <span>
-                        Minimal
-                    </span>
-
-                </div>
-
-            </div>
-
-
-            <div class="principle">
-
-                <h3>
-                    Design Principle
-                </h3>
-
-                <p>
-                    Let the clothing speak first. Use clean typography,
-                    negative space, strong photography, and short
-                    marketing messages to keep the campaign premium
-                    and easy to understand.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =====================================================
-     MY ROLE
-===================================================== -->
+<!-- MY ROLE -->
 
 <section class="role">
 
-    <div class="container">
+<div class="container">
+
+<div class="role-grid">
+
+<div>
+
+<div class="section-heading">
+
+<span class="section-number">
+05 — MY ROLE
+</span>
+
+<h2>
+Building the campaign
+from concept to content.
+</h2>
+
+</div>
+
+<p>
+I approached AVÉRA as a product marketing campaign,
+combining fashion-focused visual design with promotional
+and social media content.
+</p>
+
+<div class="role-tags">
+
+<span class="role-tag">
+Product Marketing
+</span>
+
+<span class="role-tag">
+Graphic Design
+</span>
+
+<span class="role-tag">
+Fashion Content
+</span>
+
+<span class="role-tag">
+Social Media Design
+</span>
+
+<span class="role-tag">
+Campaign Direction
+</span>
+
+<span class="role-tag">
+Content Strategy
+</span>
+
+</div>
+
+</div>
 
 
-        <div class="role-grid">
+<div class="result">
 
+<h3>
+What this demonstrates
+</h3>
 
-            <div>
+<p>
+This project demonstrates my ability to create
+a consistent visual campaign for a product-based
+business—from collection launch graphics and
+product features to promotional and lifestyle
+social media content.
+</p>
 
+</div>
 
-                <div class="section-heading">
+</div>
 
-                    <span class="section-number">
-                        05 — MY ROLE
-                    </span>
-
-                    <h2>
-                        Building the campaign
-                        from concept to content.
-                    </h2>
-
-                </div>
-
-
-                <p>
-                    I approached AVÉRA as a product marketing campaign,
-                    combining fashion-focused visual design with promotional
-                    and social media content.
-                </p>
-
-
-                <div class="role-tags">
-
-                    <span class="role-tag">
-                        Product Marketing
-                    </span>
-
-                    <span class="role-tag">
-                        Graphic Design
-                    </span>
-
-                    <span class="role-tag">
-                        Fashion Content
-                    </span>
-
-                    <span class="role-tag">
-                        Social Media Design
-                    </span>
-
-                    <span class="role-tag">
-                        Campaign Direction
-                    </span>
-
-                    <span class="role-tag">
-                        Content Strategy
-                    </span>
-
-                </div>
-
-
-            </div>
-
-
-            <div class="result">
-
-                <h3>
-                    What this demonstrates
-                </h3>
-
-                <p>
-                    This project demonstrates my ability to create
-                    a consistent visual campaign for a product-based
-                    business—from collection launch graphics and
-                    product features to promotional and lifestyle
-                    social media content.
-                </p>
-
-            </div>
-
-
-        </div>
-
-    </div>
+</div>
 
 </section>
 
 
-<!-- =====================================================
-     CTA
-===================================================== -->
+<!-- CTA -->
 
 <section class="cta">
 
-    <div class="container">
+<div class="container">
 
-        <h2>
-            Ready to make your products stand out?
-        </h2>
+<h2>
+Ready to make your products stand out?
+</h2>
 
+<p>
+I help product-based businesses create attractive,
+consistent, and marketing-focused content for
+social media and online selling.
+</p>
 
-        <p>
-            I help product-based businesses create attractive,
-            consistent, and marketing-focused content for
-            social media and online selling.
-        </p>
+<a href="../index.html#contact" class="btn">
+Let's Work Together →
+</a>
 
-
-        <a
-            href="../index.html#contact"
-            class="btn">
-            Let's Work Together →
-        </a>
-
-    </div>
+</div>
 
 </section>
-
 
 </main>
 
 
-<!-- =====================================================
-     FOOTER
-===================================================== -->
-
 <footer>
 
-    © 2026 Snooky Delos Reyes ·
-    Product Marketing & Graphic Design VA
+© 2026 Snooky Delos Reyes · Product Marketing & Graphic Design VA
 
 </footer>
-
-
-<!-- =====================================================
-     JAVASCRIPT
-===================================================== -->
-
-<script>
-
-/* =========================================================
-   MOBILE MENU
-========================================================= */
-
-function toggleMenu() {
-
-    const nav = document.getElementById("siteNav");
-
-    const button = document.querySelector(".menu-toggle");
-
-    const isOpen = nav.classList.toggle("open");
-
-
-    button.setAttribute(
-        "aria-expanded",
-        isOpen ? "true" : "false"
-    );
-
-
-    button.setAttribute(
-        "aria-label",
-        isOpen ? "Close menu" : "Open menu"
-    );
-
-
-    button.textContent = isOpen ? "×" : "☰";
-}
-
-
-/* =========================================================
-   CLOSE MOBILE MENU AFTER CLICKING A LINK
-========================================================= */
-
-document.querySelectorAll("#siteNav a").forEach(function(link) {
-
-    link.addEventListener("click", function() {
-
-        const nav = document.getElementById("siteNav");
-
-        const button = document.querySelector(".menu-toggle");
-
-
-        nav.classList.remove("open");
-
-
-        button.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-
-        button.setAttribute(
-            "aria-label",
-            "Open menu"
-        );
-
-
-        button.textContent = "☰";
-
-    });
-
-});
-
-
-/* =========================================================
-   BROKEN IMAGE DETECTION
-=========================================================
-
-   If an image filename/path is incorrect on GitHub Pages,
-   the image gets a visible fallback area instead of
-   breaking the entire layout.
-========================================================= */
-
-document.querySelectorAll("img").forEach(function(img) {
-
-    img.addEventListener("error", function() {
-
-        img.classList.add("is-missing");
-
-        img.alt =
-            "Image not found — check the filename and images folder";
-
-    });
-
-});
-
-
-/* =========================================================
-   RESET MOBILE MENU WHEN SCREEN BECOMES DESKTOP
-========================================================= */
-
-window.addEventListener("resize", function() {
-
-    if (window.innerWidth > 850) {
-
-        const nav = document.getElementById("siteNav");
-
-        const button = document.querySelector(".menu-toggle");
-
-
-        nav.classList.remove("open");
-
-
-        button.setAttribute(
-            "aria-expanded",
-            "false"
-        );
-
-
-        button.setAttribute(
-            "aria-label",
-            "Open menu"
-        );
-
-
-        button.textContent = "☰";
-    }
-
-});
-
-</script>
 
 
 </body>
