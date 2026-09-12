@@ -1,0 +1,1653 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Mila Bakes | Food Marketing Case Study</title>
+
+<meta name="description"
+content="Mila Bakes Sweet Box Campaign — food product marketing and graphic design concept by Snooky Delos Reyes.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+rel="stylesheet">
+
+<style>
+
+/* =====================================
+   VARIABLES
+===================================== */
+
+:root {
+    --dark: #241914;
+    --text: #5b4840;
+    --muted: #8b756c;
+
+    --cream: #fffaf4;
+    --white: #ffffff;
+
+    --brown: #9a6247;
+    --brown-dark: #704332;
+
+    --caramel: #d99b6c;
+    --peach: #f4d5bd;
+    --soft: #f8e9dc;
+
+    --border: #ead8ca;
+
+    --shadow: 0 20px 60px rgba(80,45,25,.10);
+
+    --serif: "Playfair Display", serif;
+    --sans: "DM Sans", sans-serif;
+}
+
+
+/* =====================================
+   RESET
+===================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--cream);
+    color: var(--dark);
+    font-family: var(--sans);
+    line-height: 1.7;
+}
+
+img {
+    width: 100%;
+    display: block;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+    width: min(1120px, 92%);
+    margin: auto;
+}
+
+
+/* =====================================
+   NAVIGATION
+===================================== */
+
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+
+    background: rgba(255,250,244,.95);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom: 1px solid var(--border);
+}
+
+.nav-inner {
+    min-height: 72px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo {
+    font-family: var(--serif);
+
+    font-size: 23px;
+
+    letter-spacing: 2px;
+}
+
+.logo span {
+    color: var(--brown);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+
+    gap: 27px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.nav-links a {
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--brown);
+}
+
+.back-btn {
+    padding: 9px 17px;
+
+    border: 1px solid var(--dark);
+
+    border-radius: 30px;
+}
+
+.back-btn:hover {
+    background: var(--dark);
+
+    color: white !important;
+}
+
+
+/* =====================================
+   HERO
+===================================== */
+
+.hero {
+    padding: 100px 0 70px;
+}
+
+.hero-grid {
+    display: grid;
+
+    grid-template-columns: .9fr 1.1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.eyebrow {
+    display: inline-block;
+
+    padding: 7px 14px;
+
+    border-radius: 30px;
+
+    background: var(--soft);
+
+    border: 1px solid var(--border);
+
+    color: var(--brown-dark);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.hero h1 {
+    margin-top: 20px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(55px, 8vw, 90px);
+
+    line-height: 1;
+
+    letter-spacing: -1px;
+}
+
+.hero h1 span {
+    color: var(--brown);
+}
+
+.subtitle {
+    margin-top: 18px;
+
+    font-family: var(--serif);
+
+    font-size: 28px;
+
+    color: var(--text);
+}
+
+.hero-description {
+    max-width: 550px;
+
+    margin-top: 20px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+}
+
+.buttons {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.btn {
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 13px 23px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+.btn-primary {
+    background: var(--dark);
+
+    color: white;
+}
+
+.btn-primary:hover {
+    background: var(--brown);
+
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    background: white;
+
+    border: 1px solid var(--border);
+}
+
+.btn-outline:hover {
+    border-color: var(--brown);
+
+    color: var(--brown);
+}
+
+
+/* =====================================
+   HERO IMAGE
+===================================== */
+
+.hero-image {
+    position: relative;
+}
+
+.hero-image::before {
+    content: "";
+
+    position: absolute;
+
+    width: 190px;
+    height: 190px;
+
+    background: var(--peach);
+
+    border-radius: 50%;
+
+    top: -40px;
+    right: -40px;
+
+    z-index: -1;
+}
+
+.hero-image::after {
+    content: "";
+
+    position: absolute;
+
+    width: 100px;
+    height: 100px;
+
+    background: var(--caramel);
+
+    border-radius: 50%;
+
+    bottom: -30px;
+    left: -30px;
+
+    z-index: -1;
+}
+
+.hero-image img {
+    border-radius: 25px;
+
+    box-shadow: var(--shadow);
+}
+
+
+/* =====================================
+   PROJECT INFO
+===================================== */
+
+.project-info {
+    padding: 25px 0 90px;
+}
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3,1fr);
+
+    gap: 18px;
+}
+
+.info-card {
+    padding: 28px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 18px;
+
+    box-shadow: 0 10px 30px rgba(60,35,20,.04);
+}
+
+.info-card small {
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.info-card strong {
+    display: block;
+
+    margin-top: 5px;
+}
+
+
+/* =====================================
+   SECTIONS
+===================================== */
+
+section {
+    padding: 90px 0;
+}
+
+.section-heading {
+    max-width: 720px;
+
+    margin-bottom: 45px;
+}
+
+.section-number {
+    color: var(--brown);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+    margin-top: 8px;
+
+    font-family: var(--serif);
+
+    font-size: clamp(35px,5vw,54px);
+
+    line-height: 1.15;
+}
+
+.section-heading p {
+    margin-top: 15px;
+
+    color: var(--muted);
+}
+
+
+/* =====================================
+   BRAND
+===================================== */
+
+.brand {
+    background: white;
+}
+
+.brand-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.brand-text p {
+    margin-bottom: 18px;
+
+    color: var(--text);
+}
+
+.quote {
+    margin-top: 25px;
+
+    padding: 22px;
+
+    background: var(--soft);
+
+    border-left: 3px solid var(--brown);
+
+    font-family: var(--serif);
+
+    font-size: 21px;
+}
+
+.brand-box {
+    padding: 70px 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f8dfcc,
+            #edc09f
+        );
+
+    text-align: center;
+
+    border-radius: 25px;
+}
+
+.brand-box h3 {
+    font-family: var(--serif);
+
+    font-size: 48px;
+
+    letter-spacing: 2px;
+}
+
+.brand-box p {
+    margin-top: 8px;
+
+    color: var(--brown-dark);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================
+   MARKETING GOAL
+===================================== */
+
+.goal-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+}
+
+.goal-list {
+    display: grid;
+
+    gap: 15px;
+}
+
+.goal-item {
+    padding: 21px;
+
+    background: white;
+
+    border: 1px solid var(--border);
+
+    border-radius: 15px;
+}
+
+.goal-item strong {
+    display: block;
+
+    margin-bottom: 5px;
+}
+
+.goal-item span {
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+.strategy {
+    padding: 38px;
+
+    background: var(--dark);
+
+    color: white;
+
+    border-radius: 25px;
+}
+
+.strategy h3 {
+    font-family: var(--serif);
+
+    font-size: 33px;
+}
+
+.strategy ul {
+    margin-top: 20px;
+
+    padding-left: 20px;
+}
+
+.strategy li {
+    margin: 10px 0;
+
+    color: #ded6d0;
+}
+
+
+/* =====================================
+   CAMPAIGN
+===================================== */
+
+.campaign {
+    background: var(--soft);
+}
+
+.campaign-grid {
+    display: grid;
+
+    grid-template-columns: repeat(2,1fr);
+
+    gap: 25px;
+}
+
+.campaign-card {
+    padding: 12px;
+
+    background: white;
+
+    border-radius: 22px;
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+}
+
+.campaign-card img {
+    aspect-ratio: 1/1;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+}
+
+.campaign-content {
+    padding: 20px 12px 12px;
+}
+
+.campaign-content span {
+    color: var(--brown);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.campaign-content h3 {
+    margin-top: 5px;
+
+    font-family: var(--serif);
+
+    font-size: 26px;
+
+    line-height: 1.25;
+}
+
+.campaign-content p {
+    margin-top: 7px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =====================================
+   CONTENT STRATEGY
+===================================== */
+
+.strategy-section {
+    background: white;
+}
+
+.strategy-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.strategy-copy p {
+    color: var(--text);
+
+    margin-bottom: 18px;
+}
+
+.tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.tag {
+    padding: 9px 15px;
+
+    border-radius: 30px;
+
+    background: var(--soft);
+
+    color: var(--brown-dark);
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.strategy-card {
+    padding: 40px;
+
+    background: var(--cream);
+
+    border: 1px solid var(--border);
+
+    border-radius: 25px;
+}
+
+.strategy-card h3 {
+    font-family: var(--serif);
+
+    font-size: 32px;
+}
+
+.strategy-card p {
+    margin-top: 12px;
+
+    color: var(--text);
+}
+
+
+/* =====================================
+   MY ROLE
+===================================== */
+
+.role {
+    background: var(--dark);
+
+    color: white;
+}
+
+.role-grid {
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.role .section-number {
+    color: var(--caramel);
+}
+
+.role p {
+    color: #d4ccc7;
+}
+
+.role-tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.role-tag {
+    padding: 9px 15px;
+
+    background: rgba(255,255,255,.08);
+
+    border: 1px solid rgba(255,255,255,.13);
+
+    border-radius: 30px;
+
+    color: #eee;
+
+    font-size: 13px;
+}
+
+.result {
+    padding: 40px;
+
+    background: rgba(255,255,255,.06);
+
+    border: 1px solid rgba(255,255,255,.12);
+
+    border-radius: 25px;
+}
+
+.result h3 {
+    font-family: var(--serif);
+
+    font-size: 32px;
+}
+
+.result p {
+    margin-top: 12px;
+
+    color: #d4ccc7;
+}
+
+
+/* =====================================
+   CTA
+===================================== */
+
+.cta {
+    padding: 100px 0;
+
+    text-align: center;
+}
+
+.cta-box {
+    padding: 70px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f5d9c4,
+            #f8e9dc
+        );
+
+    border-radius: 35px;
+}
+
+.cta h2 {
+    font-family: var(--serif);
+
+    font-size: clamp(40px,6vw,62px);
+}
+
+.cta p {
+    max-width: 600px;
+
+    margin: 15px auto 30px;
+
+    color: var(--text);
+}
+
+
+/* =====================================
+   FOOTER
+===================================== */
+
+footer {
+    padding: 25px;
+
+    background: var(--dark);
+
+    color: #aaa;
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+
+/* =====================================
+   RESPONSIVE
+===================================== */
+
+@media(max-width:850px) {
+
+    .nav-links a:not(.back-btn) {
+        display: none;
+    }
+
+    .hero {
+        padding: 70px 0 50px;
+    }
+
+    .hero-grid,
+    .brand-grid,
+    .goal-grid,
+    .strategy-grid,
+    .role-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .campaign-grid {
+        grid-template-columns: 1fr;
+    }
+
+    section {
+        padding: 70px 0;
+    }
+}
+
+@media(max-width:500px) {
+
+    .hero h1 {
+        font-size: 54px;
+    }
+
+    .subtitle {
+        font-size: 22px;
+    }
+
+    .brand-box h3 {
+        font-size: 35px;
+    }
+
+    .strategy,
+    .strategy-card,
+    .result {
+        padding: 25px;
+    }
+
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================
+     NAVIGATION
+===================================== -->
+
+<header class="navbar">
+
+<div class="container nav-inner">
+
+<a href="../index.html" class="logo">
+    SN<span>OOKY</span>
+</a>
+
+<nav class="nav-links">
+
+<a href="../index.html#services">
+    Services
+</a>
+
+<a href="../index.html#portfolio">
+    Portfolio
+</a>
+
+<a href="../index.html#contact">
+    Contact
+</a>
+
+<a href="../index.html" class="back-btn">
+    ← Back to Portfolio
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =====================================
+     HERO
+===================================== -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+<div>
+
+<span class="eyebrow">
+    Concept Project
+</span>
+
+<h1>
+    Mila<br>
+    <span>Bakes</span>
+</h1>
+
+<div class="subtitle">
+    Sweet Box Campaign
+</div>
+
+<p class="hero-description">
+    A fictional bakery marketing campaign created to demonstrate
+    food product photography direction, promotional graphic design,
+    menu content, social media marketing, and campaign planning.
+</p>
+
+<div class="buttons">
+
+<a href="#campaign" class="btn btn-primary">
+    View Campaign
+</a>
+
+<a href="../index.html#contact" class="btn btn-outline">
+    Work With Me
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-image">
+
+<img
+src="../images/mila-bakes/mila-campaign.jpg"
+alt="Mila Bakes Sweet Box Marketing Campaign">
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================
+     PROJECT INFORMATION
+===================================== -->
+
+<section class="project-info">
+
+<div class="container">
+
+<div class="info-grid">
+
+<div class="info-card">
+
+<small>
+Industry
+</small>
+
+<strong>
+Food & Bakery
+</strong>
+
+</div>
+
+
+<div class="info-card">
+
+<small>
+Campaign
+</small>
+
+<strong>
+Sweet Box
+</strong>
+
+</div>
+
+
+<div class="info-card">
+
+<small>
+Project Type
+</small>
+
+<strong>
+Portfolio Concept
+</strong>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================
+     BRAND STORY
+===================================== -->
+
+<section class="brand">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-number">
+01 — THE BRAND
+</span>
+
+<h2>
+A bakery brand built around
+warmth, freshness, and happiness.
+</h2>
+
+</div>
+
+
+<div class="brand-grid">
+
+<div class="brand-text">
+
+<p>
+Mila Bakes is a fictional small-batch bakery created
+around the idea that freshly baked treats can turn
+ordinary moments into something special.
+</p>
+
+<p>
+The visual direction focuses on warm photography,
+soft bakery colors, appetizing product presentation,
+and friendly messaging that feels personal rather
+than overly corporate.
+</p>
+
+<div class="quote">
+“Made fresh. Packed with love.”
+</div>
+
+</div>
+
+
+<div class="brand-box">
+
+<h3>
+MILA BAKES
+</h3>
+
+<p>
+Freshly Baked · Made With Love
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================
+     MARKETING GOAL
+===================================== -->
+
+<section>
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-number">
+02 — MARKETING GOAL
+</span>
+
+<h2>
+Make customers hungry before
+they even place an order.
+</h2>
+
+</div>
+
+
+<div class="goal-grid">
+
+
+<div class="goal-list">
+
+<div class="goal-item">
+
+<strong>
+Showcase the Products
+</strong>
+
+<span>
+Present the cookies in an attractive and
+appetizing way.
+</span>
+
+</div>
+
+
+<div class="goal-item">
+
+<strong>
+Build Product Awareness
+</strong>
+
+<span>
+Introduce the different cookie flavors and
+the Sweet Box offering.
+</span>
+
+</div>
+
+
+<div class="goal-item">
+
+<strong>
+Increase Order Interest
+</strong>
+
+<span>
+Use bundles and promotional messaging to
+encourage customers to place an order.
+</span>
+
+</div>
+
+
+<div class="goal-item">
+
+<strong>
+Create Social Engagement
+</strong>
+
+<span>
+Develop content that is visually appealing
+and easy to share on social media.
+</span>
+
+</div>
+
+</div>
+
+
+<div class="strategy">
+
+<h3>
+Content Strategy
+</h3>
+
+<ul>
+
+<li>Product showcase</li>
+
+<li>Flavor education</li>
+
+<li>Menu content</li>
+
+<li>Bundle promotion</li>
+
+<li>Limited-time offers</li>
+
+<li>Lifestyle storytelling</li>
+
+</ul>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================
+     CAMPAIGN
+===================================== -->
+
+<section class="campaign" id="campaign">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-number">
+03 — CAMPAIGN DESIGNS
+</span>
+
+<h2>
+A sweet campaign with
+five marketing touchpoints.
+</h2>
+
+<p>
+Each design was created for a different stage of
+the customer's journey—from discovering the product
+to deciding what to order.
+</p>
+
+</div>
+
+
+<div class="campaign-grid">
+
+
+<!-- HERO -->
+
+<article class="campaign-card">
+
+<img
+src="../images/mila-bakes/hero.jpg"
+alt="Mila Bakes Hero Advertisement">
+
+<div class="campaign-content">
+
+<span>
+01 — Hero Advertisement
+</span>
+
+<h3>
+A Little Box of Happiness
+</h3>
+
+<p>
+A product-focused advertisement designed to
+immediately create appetite and introduce
+the Sweet Box.
+</p>
+
+</div>
+
+</article>
+
+
+<!-- MENU -->
+
+<article class="campaign-card">
+
+<img
+src="../images/mila-bakes/menu.jpg"
+alt="Mila Bakes Cookie Menu">
+
+<div class="campaign-content">
+
+<span>
+02 — Menu Graphic
+</span>
+
+<h3>
+Choose Your Favorite
+</h3>
+
+<p>
+A simple menu layout that makes flavors,
+options, and product choices easy to scan.
+</p>
+
+</div>
+
+</article>
+
+
+<!-- BUNDLE -->
+
+<article class="campaign-card">
+
+<img
+src="../images/mila-bakes/bundle.jpg"
+alt="Mila Bakes Cookie Bundle Promotion">
+
+<div class="campaign-content">
+
+<span>
+03 — Bundle Promotion
+</span>
+
+<h3>
+12 Cookies + Free Gift Box
+</h3>
+
+<p>
+A promotional graphic designed to increase
+perceived value and encourage larger orders.
+</p>
+
+</div>
+
+</article>
+
+
+<!-- WEEKEND -->
+
+<article class="campaign-card">
+
+<img
+src="../images/mila-bakes/weekend.jpg"
+alt="Mila Bakes Weekend Promotion">
+
+<div class="campaign-content">
+
+<span>
+04 — Limited Offer
+</span>
+
+<h3>
+Weekend Sweet Deal
+</h3>
+
+<p>
+A time-sensitive promotional design created
+to add urgency to the campaign.
+</p>
+
+</div>
+
+</article>
+
+
+<!-- SOCIAL -->
+
+<article class="campaign-card">
+
+<img
+src="../images/mila-bakes/social.jpg"
+alt="Mila Bakes Social Media Post">
+
+<div class="campaign-content">
+
+<span>
+05 — Social Media Content
+</span>
+
+<h3>
+Made Fresh. Packed With Love.
+</h3>
+
+<p>
+A warm lifestyle post designed to build
+emotional connection with the audience.
+</p>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================
+     CONTENT STRATEGY
+===================================== -->
+
+<section class="strategy-section">
+
+<div class="container">
+
+<div class="section-heading">
+
+<span class="section-number">
+04 — CONTENT STRATEGY
+</span>
+
+<h2>
+Different posts.
+One consistent
+brand experience.
+</h2>
+
+</div>
+
+
+<div class="strategy-grid">
+
+
+<div class="strategy-copy">
+
+<p>
+For a small bakery, every post should have a purpose.
+Instead of repeatedly posting product photos, the campaign
+uses different content angles to keep the audience interested.
+</p>
+
+<p>
+The content moves between product awareness, education,
+promotion, urgency, and emotional storytelling.
+</p>
+
+
+<div class="tags">
+
+<span class="tag">
+Product Showcase
+</span>
+
+<span class="tag">
+Menu
+</span>
+
+<span class="tag">
+Promotion
+</span>
+
+<span class="tag">
+Urgency
+</span>
+
+<span class="tag">
+Lifestyle
+</span>
+
+<span class="tag">
+Engagement
+</span>
+
+</div>
+
+</div>
+
+
+<div class="strategy-card">
+
+<h3>
+The Marketing Idea
+</h3>
+
+<p>
+Don't just tell customers that the cookies taste good.
+Show them the product, give them a reason to order,
+make choosing easy, and create a reason to order today.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================
+     MY ROLE
+===================================== -->
+
+<section class="role">
+
+<div class="container">
+
+<div class="role-grid">
+
+
+<div>
+
+<div class="section-heading">
+
+<span class="section-number">
+05 — MY ROLE
+</span>
+
+<h2>
+Turning a simple bakery
+product into a campaign.
+</h2>
+
+</div>
+
+<p>
+I approached this project from both a visual and
+marketing perspective, creating a coordinated set
+of promotional materials for a fictional bakery brand.
+</p>
+
+
+<div class="role-tags">
+
+<span class="role-tag">
+Product Marketing
+</span>
+
+<span class="role-tag">
+Graphic Design
+</span>
+
+<span class="role-tag">
+Food Marketing
+</span>
+
+<span class="role-tag">
+Social Media Design
+</span>
+
+<span class="role-tag">
+Promotional Content
+</span>
+
+<span class="role-tag">
+Content Strategy
+</span>
+
+</div>
+
+</div>
+
+
+<div class="result">
+
+<h3>
+What this demonstrates
+</h3>
+
+<p>
+This project demonstrates my ability to create
+marketing content for a food business while keeping
+the brand visually consistent across product ads,
+menus, promotions, and social media content.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================
+     CTA
+===================================== -->
+
+<section class="cta">
+
+<div class="container">
+
+<div class="cta-box">
+
+<h2>
+Have a product worth sharing?
+</h2>
+
+<p>
+I can help turn your products into attractive
+marketing content that makes people stop,
+look, and learn more.
+</p>
+
+<a href="../index.html#contact"
+class="btn btn-primary">
+Let's Work Together →
+</a>
+
+</div>
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================
+     FOOTER
+===================================== -->
+
+<footer>
+
+© 2026 Snooky Delos Reyes · Product Marketing & Graphic Design VA
+
+</footer>
+
+
+</body>
+</html>
