@@ -469,8 +469,13 @@ section {
 }
 
 .campaign-card img {
-    aspect-ratio: 1/1;
-    object-fit: cover;
+    width: 100%;
+    height: auto !important;
+    max-width: 100%;
+    min-height: 0;
+    display: block;
+    object-fit: contain !important;
+    object-position: center center;
 }
 
 .campaign-content {
@@ -703,6 +708,26 @@ footer {
     }
 }
 
+</style>
+
+<style id="no-crop-images">
+/* FINAL IMAGE FIT FIX — NEVER CROP CAMPAIGN IMAGES */
+.campaign-card {
+    overflow: visible !important;
+}
+.campaign-card img,
+.hero-image img {
+    display: block !important;
+    width: 100% !important;
+    height: auto !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    max-height: none !important;
+    aspect-ratio: auto !important;
+    object-fit: contain !important;
+    object-position: center center !important;
+}
 </style>
 </head>
 
