@@ -1,0 +1,1930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+
+<meta name="viewport"
+      content="width=device-width, initial-scale=1.0">
+
+<title>ELARA JEWELS | Product Marketing Case Study</title>
+
+<meta name="description"
+content="ELARA JEWELS — Everyday Elegance campaign concept by Snooky Delos Reyes, showcasing product marketing, graphic design and social media content.">
+
+<link rel="preconnect"
+      href="https://fonts.googleapis.com">
+
+<link rel="preconnect"
+      href="https://fonts.gstatic.com"
+      crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+      rel="stylesheet">
+
+
+<style>
+
+/* =====================================================
+   VARIABLES
+===================================================== */
+
+:root {
+
+    --black: #211e1b;
+
+    --text: #625b54;
+
+    --muted: #8c847c;
+
+    --cream: #fbf8f3;
+
+    --white: #ffffff;
+
+    --champagne: #d9c2a5;
+
+    --gold: #a88b68;
+
+    --soft-gold: #eee3d4;
+
+    --beige: #f3ece3;
+
+    --border: #e5dbcf;
+
+    --shadow:
+        0 20px 60px rgba(50,40,30,.10);
+
+    --serif:
+        "Playfair Display", serif;
+
+    --sans:
+        "DM Sans", sans-serif;
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+
+    background: var(--cream);
+
+    color: var(--black);
+
+    font-family: var(--sans);
+
+    line-height: 1.7;
+}
+
+img {
+
+    display: block;
+
+    /*
+       IMPORTANT:
+       Never force a fixed image height.
+
+       This allows uploaded images to keep
+       their original proportions.
+    */
+
+    width: 100%;
+
+    height: auto;
+
+    max-width: 100%;
+
+    object-fit: contain;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.container {
+
+    width: min(1120px, 92%);
+
+    margin: auto;
+}
+
+
+/* =====================================================
+   NAVIGATION
+===================================================== */
+
+.navbar {
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+    background:
+        rgba(251,248,243,.95);
+
+    backdrop-filter: blur(12px);
+
+    border-bottom:
+        1px solid var(--border);
+}
+
+.nav-inner {
+
+    min-height: 72px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+}
+
+.logo {
+
+    font-family: var(--serif);
+
+    font-size: 23px;
+
+    letter-spacing: 3px;
+}
+
+.logo span {
+    color: var(--gold);
+}
+
+.nav-links {
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 28px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+}
+
+.nav-links a {
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+}
+
+.back-btn {
+
+    padding: 9px 17px;
+
+    border:
+        1px solid var(--black);
+
+    border-radius: 30px;
+}
+
+.back-btn:hover {
+
+    background: var(--black);
+
+    color: white !important;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.hero {
+
+    padding:
+        100px 0 75px;
+}
+
+.hero-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        .85fr 1.15fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.eyebrow {
+
+    display: inline-block;
+
+    padding:
+        7px 14px;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 30px;
+
+    color: var(--gold);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.hero h1 {
+
+    margin-top: 20px;
+
+    font-family: var(--serif);
+
+    font-size:
+        clamp(55px, 8vw, 95px);
+
+    line-height: 1;
+
+    letter-spacing: 2px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.subtitle {
+
+    margin-top: 18px;
+
+    font-family: var(--serif);
+
+    font-size: 28px;
+
+    color: var(--text);
+}
+
+.hero-description {
+
+    max-width: 550px;
+
+    margin-top: 20px;
+
+    color: var(--muted);
+
+    font-size: 16px;
+}
+
+.buttons {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.btn {
+
+    display: inline-flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        13px 23px;
+
+    border-radius: 30px;
+
+    font-size: 14px;
+
+    font-weight: 700;
+
+    transition: .3s;
+}
+
+.btn-primary {
+
+    background: var(--black);
+
+    color: white;
+}
+
+.btn-primary:hover {
+
+    background: var(--gold);
+
+    transform:
+        translateY(-2px);
+}
+
+.btn-outline {
+
+    background: white;
+
+    border:
+        1px solid var(--border);
+}
+
+.btn-outline:hover {
+
+    color: var(--gold);
+
+    border-color:
+        var(--gold);
+}
+
+
+/* =====================================================
+   HERO IMAGE
+===================================================== */
+
+.hero-image {
+
+    position: relative;
+
+    /*
+       No fixed height.
+       The image determines the height.
+    */
+}
+
+.hero-image::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 210px;
+
+    height: 210px;
+
+    background:
+        var(--soft-gold);
+
+    border-radius: 50%;
+
+    top: -45px;
+
+    right: -45px;
+
+    z-index: -1;
+}
+
+.hero-image img {
+
+    /*
+       Keep the complete image visible.
+    */
+
+    width: 100%;
+
+    height: auto;
+
+    object-fit: contain;
+
+    border-radius: 6px;
+
+    box-shadow:
+        var(--shadow);
+}
+
+
+/* =====================================================
+   PROJECT INFO
+===================================================== */
+
+.project-info {
+
+    padding:
+        20px 0 90px;
+}
+
+.info-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(3, 1fr);
+
+    gap: 18px;
+}
+
+.info-card {
+
+    padding: 28px;
+
+    background: white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 16px;
+}
+
+.info-card small {
+
+    display: block;
+
+    color: var(--muted);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.info-card strong {
+
+    display: block;
+
+    margin-top: 5px;
+}
+
+
+/* =====================================================
+   GENERAL SECTIONS
+===================================================== */
+
+section {
+    padding: 90px 0;
+}
+
+.section-heading {
+
+    max-width: 720px;
+
+    margin-bottom: 45px;
+}
+
+.section-number {
+
+    color: var(--gold);
+
+    font-size: 12px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+}
+
+.section-heading h2 {
+
+    margin-top: 8px;
+
+    font-family: var(--serif);
+
+    font-size:
+        clamp(35px, 5vw, 54px);
+
+    line-height: 1.15;
+}
+
+.section-heading p {
+
+    margin-top: 15px;
+
+    color: var(--muted);
+}
+
+
+/* =====================================================
+   BRAND
+===================================================== */
+
+.brand {
+
+    background: white;
+}
+
+.brand-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.brand-text p {
+
+    margin-bottom: 18px;
+
+    color: var(--text);
+}
+
+.quote {
+
+    margin-top: 25px;
+
+    padding: 22px;
+
+    background:
+        var(--beige);
+
+    border-left:
+        3px solid var(--gold);
+
+    font-family: var(--serif);
+
+    font-size: 21px;
+}
+
+.brand-box {
+
+    padding:
+        80px 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #f1e6d8,
+            #dfc9ad
+        );
+
+    text-align: center;
+
+    border-radius: 4px;
+}
+
+.brand-box h3 {
+
+    font-family: var(--serif);
+
+    font-size: 48px;
+
+    letter-spacing: 5px;
+}
+
+.brand-box p {
+
+    margin-top: 8px;
+
+    color: var(--gold);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 2px;
+
+    text-transform: uppercase;
+}
+
+
+/* =====================================================
+   CAMPAIGN GOALS
+===================================================== */
+
+.goal-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 70px;
+}
+
+.goal-list {
+
+    display: grid;
+
+    gap: 15px;
+}
+
+.goal-item {
+
+    padding: 21px;
+
+    background: white;
+
+    border:
+        1px solid var(--border);
+
+    border-radius: 14px;
+}
+
+.goal-item strong {
+    display: block;
+}
+
+.goal-item span {
+
+    display: block;
+
+    margin-top: 4px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+.strategy {
+
+    padding: 38px;
+
+    background: var(--black);
+
+    color: white;
+
+    border-radius: 4px;
+}
+
+.strategy h3 {
+
+    font-family: var(--serif);
+
+    font-size: 33px;
+}
+
+.strategy ul {
+
+    margin-top: 20px;
+
+    padding-left: 20px;
+}
+
+.strategy li {
+
+    margin: 10px 0;
+
+    color: #d8d2cb;
+}
+
+
+/* =====================================================
+   CAMPAIGN
+===================================================== */
+
+.campaign {
+
+    background: var(--beige);
+}
+
+.campaign-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 25px;
+}
+
+.campaign-card {
+
+    background: white;
+
+    padding: 12px;
+
+    border-radius: 4px;
+
+    box-shadow: var(--shadow);
+
+    overflow: hidden;
+}
+
+
+/*
+=======================================================
+IMPORTANT IMAGE RULE
+
+Images are NOT placed inside a fixed-height box.
+
+Therefore:
+
+- Portrait image = complete portrait
+- Landscape image = complete landscape
+- Square image = complete square
+- No forced cropping
+- No object-position tricks
+=======================================================
+*/
+
+.campaign-card img {
+
+    width: 100%;
+
+    height: auto;
+
+    max-height: none;
+
+    object-fit: contain;
+
+    border-radius: 2px;
+}
+
+
+/* =====================================================
+   CAMPAIGN TEXT
+===================================================== */
+
+.campaign-content {
+
+    padding:
+        20px 12px 12px;
+}
+
+.campaign-content span {
+
+    color: var(--gold);
+
+    font-size: 11px;
+
+    font-weight: 700;
+
+    letter-spacing: 1px;
+
+    text-transform: uppercase;
+}
+
+.campaign-content h3 {
+
+    margin-top: 5px;
+
+    font-family: var(--serif);
+
+    font-size: 26px;
+
+    line-height: 1.25;
+}
+
+.campaign-content p {
+
+    margin-top: 7px;
+
+    color: var(--muted);
+
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   VISUAL DIRECTION
+===================================================== */
+
+.visual {
+
+    background: white;
+}
+
+.visual-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.visual-copy p {
+
+    margin-bottom: 18px;
+
+    color: var(--text);
+}
+
+.palette {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.palette span {
+
+    padding:
+        9px 15px;
+
+    background: var(--beige);
+
+    border-radius: 30px;
+
+    font-size: 13px;
+
+    font-weight: 600;
+}
+
+.visual-card {
+
+    padding: 40px;
+
+    background:
+        var(--cream);
+
+    border:
+        1px solid var(--border);
+}
+
+.visual-card h3 {
+
+    font-family: var(--serif);
+
+    font-size: 32px;
+}
+
+.visual-card p {
+
+    margin-top: 12px;
+
+    color: var(--text);
+}
+
+
+/* =====================================================
+   MY ROLE
+===================================================== */
+
+.role {
+
+    background: var(--black);
+
+    color: white;
+}
+
+.role-grid {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+.role .section-number {
+    color: var(--champagne);
+}
+
+.role p {
+    color: #d0c9c3;
+}
+
+.role-tags {
+
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 10px;
+
+    margin-top: 25px;
+}
+
+.role-tag {
+
+    padding:
+        9px 15px;
+
+    background:
+        rgba(255,255,255,.07);
+
+    border:
+        1px solid rgba(255,255,255,.14);
+
+    border-radius: 30px;
+
+    color: #eee;
+
+    font-size: 13px;
+}
+
+.result {
+
+    padding: 40px;
+
+    background:
+        rgba(255,255,255,.05);
+
+    border:
+        1px solid rgba(255,255,255,.12);
+}
+
+.result h3 {
+
+    font-family: var(--serif);
+
+    font-size: 32px;
+}
+
+.result p {
+
+    margin-top: 12px;
+
+    color: #d0c9c3;
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.cta {
+
+    padding: 100px 0;
+
+    text-align: center;
+}
+
+.cta-box {
+
+    padding:
+        75px 30px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #f0e4d5,
+            #faf5ed
+        );
+
+    border-radius: 4px;
+}
+
+.cta h2 {
+
+    font-family: var(--serif);
+
+    font-size:
+        clamp(40px, 6vw, 62px);
+
+    line-height: 1.15;
+}
+
+.cta p {
+
+    max-width: 600px;
+
+    margin:
+        15px auto 30px;
+
+    color: var(--text);
+}
+
+
+/* =====================================================
+   FOOTER
+===================================================== */
+
+footer {
+
+    padding: 25px;
+
+    background: var(--black);
+
+    color: #aaa;
+
+    text-align: center;
+
+    font-size: 13px;
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media(max-width: 850px) {
+
+    .nav-links a:not(.back-btn) {
+        display: none;
+    }
+
+    .hero {
+
+        padding:
+            70px 0 50px;
+    }
+
+    .hero-grid,
+    .brand-grid,
+    .goal-grid,
+    .visual-grid,
+    .role-grid {
+
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .info-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    .campaign-grid {
+
+        grid-template-columns: 1fr;
+    }
+
+    section {
+
+        padding: 70px 0;
+    }
+}
+
+
+@media(max-width: 500px) {
+
+    .hero h1 {
+
+        font-size: 54px;
+    }
+
+    .subtitle {
+
+        font-size: 22px;
+    }
+
+    .brand-box h3 {
+
+        font-size: 35px;
+
+        letter-spacing: 3px;
+    }
+
+    .strategy,
+    .visual-card,
+    .result {
+
+        padding: 25px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =====================================================
+     NAVIGATION
+===================================================== -->
+
+<header class="navbar">
+
+<div class="container nav-inner">
+
+<a href="../index.html" class="logo">
+    SN<span>OOKY</span>
+</a>
+
+<nav class="nav-links">
+
+<a href="../index.html#services">
+    Services
+</a>
+
+<a href="../index.html#portfolio">
+    Portfolio
+</a>
+
+<a href="../index.html#contact">
+    Contact
+</a>
+
+<a href="../index.html"
+   class="back-btn">
+    ← Back to Portfolio
+</a>
+
+</nav>
+
+</div>
+
+</header>
+
+
+
+<main>
+
+
+<!-- =====================================================
+     HERO
+===================================================== -->
+
+<section class="hero">
+
+<div class="container hero-grid">
+
+
+<div>
+
+<span class="eyebrow">
+    Concept Project
+</span>
+
+<h1>
+    ELARA
+    <span>JEWELS</span>
+</h1>
+
+<div class="subtitle">
+    Everyday Elegance
+</div>
+
+<p class="hero-description">
+
+A fictional jewelry marketing campaign created
+to demonstrate product marketing, premium
+graphic design, social media content, and
+visual brand direction.
+
+</p>
+
+
+<div class="buttons">
+
+<a href="#campaign"
+   class="btn btn-primary">
+
+    View Campaign
+
+</a>
+
+<a href="../index.html#contact"
+   class="btn btn-outline">
+
+    Work With Me
+
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-image">
+
+<img
+src="../images/elara/elara-campaign.jpg"
+alt="ELARA JEWELS Everyday Elegance Campaign">
+
+</div>
+
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     PROJECT INFORMATION
+===================================================== -->
+
+<section class="project-info">
+
+<div class="container">
+
+<div class="info-grid">
+
+
+<div class="info-card">
+
+<small>
+Industry
+</small>
+
+<strong>
+Jewelry & Accessories
+</strong>
+
+</div>
+
+
+<div class="info-card">
+
+<small>
+Campaign
+</small>
+
+<strong>
+Everyday Elegance
+</strong>
+
+</div>
+
+
+<div class="info-card">
+
+<small>
+Project Type
+</small>
+
+<strong>
+Portfolio Concept
+</strong>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     BRAND
+===================================================== -->
+
+<section class="brand">
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<span class="section-number">
+01 — THE BRAND
+</span>
+
+<h2>
+Elegant pieces designed
+for everyday moments.
+</h2>
+
+</div>
+
+
+<div class="brand-grid">
+
+
+<div class="brand-text">
+
+<p>
+
+ELARA JEWELS is a fictional premium jewelry
+brand created around simple, feminine pieces
+that can be worn every day.
+
+</p>
+
+<p>
+
+The visual identity combines champagne tones,
+cream backgrounds, refined serif typography,
+minimal layouts, and elegant product photography.
+
+</p>
+
+
+<div class="quote">
+
+“Simple. Timeless. Yours.”
+
+</div>
+
+</div>
+
+
+<div class="brand-box">
+
+<h3>
+ELARA
+</h3>
+
+<p>
+Jewels · Everyday Elegance
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MARKETING GOAL
+===================================================== -->
+
+<section>
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<span class="section-number">
+02 — MARKETING GOAL
+</span>
+
+<h2>
+Make everyday jewelry feel
+special and desirable.
+</h2>
+
+</div>
+
+
+<div class="goal-grid">
+
+
+<div class="goal-list">
+
+
+<div class="goal-item">
+
+<strong>
+Introduce the Collection
+</strong>
+
+<span>
+Create awareness around ELARA's necklace
+and earring collection.
+</span>
+
+</div>
+
+
+<div class="goal-item">
+
+<strong>
+Highlight Versatility
+</strong>
+
+<span>
+Show customers that elegant jewelry can
+work for everyday outfits and occasions.
+</span>
+
+</div>
+
+
+<div class="goal-item">
+
+<strong>
+Create Desire
+</strong>
+
+<span>
+Use premium visuals and emotional messaging
+to make the products feel aspirational.
+</span>
+
+</div>
+
+
+<div class="goal-item">
+
+<strong>
+Encourage Purchase
+</strong>
+
+<span>
+Use an exclusive gift-packaging promotion
+to give customers an additional reason to buy.
+</span>
+
+</div>
+
+
+</div>
+
+
+<div class="strategy">
+
+<h3>
+Campaign Strategy
+</h3>
+
+<ul>
+
+<li>
+Collection introduction
+</li>
+
+<li>
+Product feature content
+</li>
+
+<li>
+Lifestyle storytelling
+</li>
+
+<li>
+Emotional brand messaging
+</li>
+
+<li>
+Limited-time promotion
+</li>
+
+<li>
+Social media engagement
+</li>
+
+</ul>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CAMPAIGN
+===================================================== -->
+
+<section class="campaign"
+         id="campaign">
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<span class="section-number">
+03 — CAMPAIGN DESIGNS
+</span>
+
+<h2>
+Five visuals built around
+Everyday Elegance.
+</h2>
+
+<p>
+
+Each design has a specific marketing purpose
+while maintaining the same premium visual identity.
+
+</p>
+
+</div>
+
+
+
+<div class="campaign-grid">
+
+
+<!-- =================================================
+     01
+================================================= -->
+
+<article class="campaign-card">
+
+<img
+src="../images/elara/collection.jpg"
+alt="ELARA Meet the Collection">
+
+<div class="campaign-content">
+
+<span>
+01 — Collection Launch
+</span>
+
+<h3>
+Meet the ELARA Collection
+</h3>
+
+<p>
+
+A collection-launch visual designed to introduce
+the brand's jewelry pieces and create initial interest.
+
+</p>
+
+</div>
+
+</article>
+
+
+
+<!-- =================================================
+     02
+================================================= -->
+
+<article class="campaign-card">
+
+<img
+src="../images/elara/everyday-elegance.jpg"
+alt="ELARA Everyday Elegance">
+
+<div class="campaign-content">
+
+<span>
+02 — Product Story
+</span>
+
+<h3>
+Designed for Everyday Elegance
+</h3>
+
+<p>
+
+A lifestyle-focused message showing how the
+jewelry can complement everyday style.
+
+</p>
+
+</div>
+
+</article>
+
+
+
+<!-- =================================================
+     03
+================================================= -->
+
+<article class="campaign-card">
+
+<img
+src="../images/elara/sparkle.jpg"
+alt="ELARA Jewelry Sparkle Campaign">
+
+<div class="campaign-content">
+
+<span>
+03 — Engagement Content
+</span>
+
+<h3>
+A Little Sparkle Goes a Long Way
+</h3>
+
+<p>
+
+An emotional social media visual designed
+to create desire and encourage engagement.
+
+</p>
+
+</div>
+
+</article>
+
+
+
+<!-- =================================================
+     04
+================================================= -->
+
+<article class="campaign-card">
+
+<img
+src="../images/elara/gift-packaging.jpg"
+alt="ELARA Free Gift Packaging Promotion">
+
+<div class="campaign-content">
+
+<span>
+04 — Limited Offer
+</span>
+
+<h3>
+Free Gift Packaging This Week
+</h3>
+
+<p>
+
+A promotional design that adds urgency while
+increasing the perceived value of the purchase.
+
+</p>
+
+</div>
+
+</article>
+
+
+
+<!-- =================================================
+     05
+================================================= -->
+
+<article class="campaign-card">
+
+<img
+src="../images/elara/timeless.jpg"
+alt="ELARA Simple Timeless Yours">
+
+<div class="campaign-content">
+
+<span>
+05 — Brand Story
+</span>
+
+<h3>
+Simple. Timeless. Yours.
+</h3>
+
+<p>
+
+A brand-focused social post designed to reinforce
+ELARA's premium and timeless identity.
+
+</p>
+
+</div>
+
+</article>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     VISUAL DIRECTION
+===================================================== -->
+
+<section class="visual">
+
+<div class="container">
+
+
+<div class="section-heading">
+
+<span class="section-number">
+04 — VISUAL DIRECTION
+</span>
+
+<h2>
+Soft luxury without
+looking complicated.
+</h2>
+
+</div>
+
+
+<div class="visual-grid">
+
+
+<div class="visual-copy">
+
+<p>
+
+The campaign uses a restrained visual language
+so the jewelry remains the main focus.
+
+</p>
+
+<p>
+
+Cream backgrounds, champagne accents, elegant
+serif typography, negative space, and close-up
+product photography create a premium feel.
+
+</p>
+
+
+<div class="palette">
+
+<span>
+Champagne
+</span>
+
+<span>
+Cream
+</span>
+
+<span>
+Warm Beige
+</span>
+
+<span>
+Soft Gold
+</span>
+
+<span>
+Black
+</span>
+
+</div>
+
+</div>
+
+
+<div class="visual-card">
+
+<h3>
+Design Principle
+</h3>
+
+<p>
+
+Let the jewelry breathe.
+
+Use generous negative space,
+refined typography, soft lighting,
+and minimal layouts to communicate
+premium quality without overwhelming
+the customer.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     MY ROLE
+===================================================== -->
+
+<section class="role">
+
+<div class="container">
+
+
+<div class="role-grid">
+
+
+<div>
+
+
+<div class="section-heading">
+
+<span class="section-number">
+05 — MY ROLE
+</span>
+
+<h2>
+Creating a premium product
+campaign from concept to content.
+</h2>
+
+</div>
+
+
+<p>
+
+I approached ELARA as a complete product
+marketing campaign, combining visual design
+with marketing-focused messaging.
+
+</p>
+
+
+<div class="role-tags">
+
+<span class="role-tag">
+Product Marketing
+</span>
+
+<span class="role-tag">
+Graphic Design
+</span>
+
+<span class="role-tag">
+Social Media Design
+</span>
+
+<span class="role-tag">
+Product Promotion
+</span>
+
+<span class="role-tag">
+Content Strategy
+</span>
+
+<span class="role-tag">
+Brand Direction
+</span>
+
+</div>
+
+</div>
+
+
+<div class="result">
+
+<h3>
+What this demonstrates
+</h3>
+
+<p>
+
+This project demonstrates my ability to create
+premium-looking marketing content for a product
+brand—from collection launches and lifestyle
+content to promotional campaigns and social
+media graphics.
+
+</p>
+
+</div>
+
+
+</div>
+
+</div>
+
+</section>
+
+
+
+<!-- =====================================================
+     CTA
+===================================================== -->
+
+<section class="cta">
+
+<div class="container">
+
+
+<div class="cta-box">
+
+<h2>
+Your products deserve
+to look this good.
+</h2>
+
+<p>
+
+I help product-based businesses create
+attractive, consistent, and marketing-focused
+visual content for social media and online selling.
+
+</p>
+
+<a href="../index.html#contact"
+   class="btn btn-primary">
+
+    Let's Work Together →
+
+</a>
+
+</div>
+
+
+</div>
+
+</section>
+
+
+</main>
+
+
+
+<!-- =====================================================
+     FOOTER
+===================================================== -->
+
+<footer>
+
+© 2026 Snooky Delos Reyes · Product Marketing & Graphic Design VA
+
+</footer>
+
+
+</body>
+</html>
